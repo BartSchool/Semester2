@@ -1,0 +1,8 @@
+Ik weet niet hoe ik de solution explorer ergens anders neer kan zetten
+dus bij deze hoe je overal komt:
+
+Boatbooking -> BoatBooking.sln
+
+circus-trein -> Circustrein -> Circustrein.sln
+
+Algoritme -> Puzzles -> Puzzles.sln

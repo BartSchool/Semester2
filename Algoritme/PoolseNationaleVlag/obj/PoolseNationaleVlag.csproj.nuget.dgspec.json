@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\31618\\Documents\\school\\ICT1\\Semester3\\PoolseNationaleVlag\\PoolseNationaleVlag.csproj": {}
+    "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\Algoritme\\PoolseNationaleVlag\\PoolseNationaleVlag.csproj": {}
   },
   "projects": {
-    "C:\\Users\\31618\\Documents\\school\\ICT1\\Semester3\\PoolseNationaleVlag\\PoolseNationaleVlag.csproj": {
+    "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\Algoritme\\PoolseNationaleVlag\\PoolseNationaleVlag.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\31618\\Documents\\school\\ICT1\\Semester3\\PoolseNationaleVlag\\PoolseNationaleVlag.csproj",
+        "projectUniqueName": "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\Algoritme\\PoolseNationaleVlag\\PoolseNationaleVlag.csproj",
         "projectName": "PoolseNationaleVlag",
-        "projectPath": "C:\\Users\\31618\\Documents\\school\\ICT1\\Semester3\\PoolseNationaleVlag\\PoolseNationaleVlag.csproj",
+        "projectPath": "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\Algoritme\\PoolseNationaleVlag\\PoolseNationaleVlag.csproj",
         "packagesPath": "C:\\Users\\31618\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\31618\\Documents\\school\\ICT1\\Semester3\\PoolseNationaleVlag\\obj\\",
+        "outputPath": "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\Algoritme\\PoolseNationaleVlag\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\31618\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,7 +49,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -54,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
