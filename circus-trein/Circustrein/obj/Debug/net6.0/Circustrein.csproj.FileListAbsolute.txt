@@ -1,0 +1,15 @@
+C:\Users\31618\Documents\GitHub\circus-trein\Circustrein\bin\Debug\net6.0\Circustrein.exe
+C:\Users\31618\Documents\GitHub\circus-trein\Circustrein\bin\Debug\net6.0\Circustrein.deps.json
+C:\Users\31618\Documents\GitHub\circus-trein\Circustrein\bin\Debug\net6.0\Circustrein.runtimeconfig.json
+C:\Users\31618\Documents\GitHub\circus-trein\Circustrein\bin\Debug\net6.0\Circustrein.dll
+C:\Users\31618\Documents\GitHub\circus-trein\Circustrein\bin\Debug\net6.0\Circustrein.pdb
+C:\Users\31618\Documents\GitHub\circus-trein\Circustrein\obj\Debug\net6.0\Circustrein.csproj.AssemblyReference.cache
+C:\Users\31618\Documents\GitHub\circus-trein\Circustrein\obj\Debug\net6.0\Circustrein.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\31618\Documents\GitHub\circus-trein\Circustrein\obj\Debug\net6.0\Circustrein.AssemblyInfoInputs.cache
+C:\Users\31618\Documents\GitHub\circus-trein\Circustrein\obj\Debug\net6.0\Circustrein.AssemblyInfo.cs
+C:\Users\31618\Documents\GitHub\circus-trein\Circustrein\obj\Debug\net6.0\Circustrein.csproj.CoreCompileInputs.cache
+C:\Users\31618\Documents\GitHub\circus-trein\Circustrein\obj\Debug\net6.0\Circustrein.dll
+C:\Users\31618\Documents\GitHub\circus-trein\Circustrein\obj\Debug\net6.0\refint\Circustrein.dll
+C:\Users\31618\Documents\GitHub\circus-trein\Circustrein\obj\Debug\net6.0\Circustrein.pdb
+C:\Users\31618\Documents\GitHub\circus-trein\Circustrein\obj\Debug\net6.0\Circustrein.genruntimeconfig.cache
+C:\Users\31618\Documents\GitHub\circus-trein\Circustrein\obj\Debug\net6.0\ref\Circustrein.dll
