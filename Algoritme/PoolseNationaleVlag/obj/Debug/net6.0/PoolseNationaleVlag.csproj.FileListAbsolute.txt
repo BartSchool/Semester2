@@ -1,0 +1,15 @@
+C:\Users\31618\Documents\school\ICT1\Semester3\PoolseNationaleVlag\bin\Debug\net6.0\PoolseNationaleVlag.exe
+C:\Users\31618\Documents\school\ICT1\Semester3\PoolseNationaleVlag\bin\Debug\net6.0\PoolseNationaleVlag.deps.json
+C:\Users\31618\Documents\school\ICT1\Semester3\PoolseNationaleVlag\bin\Debug\net6.0\PoolseNationaleVlag.runtimeconfig.json
+C:\Users\31618\Documents\school\ICT1\Semester3\PoolseNationaleVlag\bin\Debug\net6.0\PoolseNationaleVlag.dll
+C:\Users\31618\Documents\school\ICT1\Semester3\PoolseNationaleVlag\bin\Debug\net6.0\PoolseNationaleVlag.pdb
+C:\Users\31618\Documents\school\ICT1\Semester3\PoolseNationaleVlag\obj\Debug\net6.0\PoolseNationaleVlag.csproj.AssemblyReference.cache
+C:\Users\31618\Documents\school\ICT1\Semester3\PoolseNationaleVlag\obj\Debug\net6.0\PoolseNationaleVlag.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\31618\Documents\school\ICT1\Semester3\PoolseNationaleVlag\obj\Debug\net6.0\PoolseNationaleVlag.AssemblyInfoInputs.cache
+C:\Users\31618\Documents\school\ICT1\Semester3\PoolseNationaleVlag\obj\Debug\net6.0\PoolseNationaleVlag.AssemblyInfo.cs
+C:\Users\31618\Documents\school\ICT1\Semester3\PoolseNationaleVlag\obj\Debug\net6.0\PoolseNationaleVlag.csproj.CoreCompileInputs.cache
+C:\Users\31618\Documents\school\ICT1\Semester3\PoolseNationaleVlag\obj\Debug\net6.0\PoolseNationaleVlag.dll
+C:\Users\31618\Documents\school\ICT1\Semester3\PoolseNationaleVlag\obj\Debug\net6.0\refint\PoolseNationaleVlag.dll
+C:\Users\31618\Documents\school\ICT1\Semester3\PoolseNationaleVlag\obj\Debug\net6.0\PoolseNationaleVlag.pdb
+C:\Users\31618\Documents\school\ICT1\Semester3\PoolseNationaleVlag\obj\Debug\net6.0\PoolseNationaleVlag.genruntimeconfig.cache
+C:\Users\31618\Documents\school\ICT1\Semester3\PoolseNationaleVlag\obj\Debug\net6.0\ref\PoolseNationaleVlag.dll

@@ -1,0 +1,15 @@
+C:\Users\31618\Documents\school\ICT1\Semester3\Wetenschappers\bin\Debug\net6.0\Wetenschappers.exe
+C:\Users\31618\Documents\school\ICT1\Semester3\Wetenschappers\bin\Debug\net6.0\Wetenschappers.deps.json
+C:\Users\31618\Documents\school\ICT1\Semester3\Wetenschappers\bin\Debug\net6.0\Wetenschappers.runtimeconfig.json
+C:\Users\31618\Documents\school\ICT1\Semester3\Wetenschappers\bin\Debug\net6.0\Wetenschappers.dll
+C:\Users\31618\Documents\school\ICT1\Semester3\Wetenschappers\bin\Debug\net6.0\Wetenschappers.pdb
+C:\Users\31618\Documents\school\ICT1\Semester3\Wetenschappers\obj\Debug\net6.0\Wetenschappers.csproj.AssemblyReference.cache
+C:\Users\31618\Documents\school\ICT1\Semester3\Wetenschappers\obj\Debug\net6.0\Wetenschappers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\31618\Documents\school\ICT1\Semester3\Wetenschappers\obj\Debug\net6.0\Wetenschappers.AssemblyInfoInputs.cache
+C:\Users\31618\Documents\school\ICT1\Semester3\Wetenschappers\obj\Debug\net6.0\Wetenschappers.AssemblyInfo.cs
+C:\Users\31618\Documents\school\ICT1\Semester3\Wetenschappers\obj\Debug\net6.0\Wetenschappers.csproj.CoreCompileInputs.cache
+C:\Users\31618\Documents\school\ICT1\Semester3\Wetenschappers\obj\Debug\net6.0\Wetenschappers.dll
+C:\Users\31618\Documents\school\ICT1\Semester3\Wetenschappers\obj\Debug\net6.0\refint\Wetenschappers.dll
+C:\Users\31618\Documents\school\ICT1\Semester3\Wetenschappers\obj\Debug\net6.0\Wetenschappers.pdb
+C:\Users\31618\Documents\school\ICT1\Semester3\Wetenschappers\obj\Debug\net6.0\Wetenschappers.genruntimeconfig.cache
+C:\Users\31618\Documents\school\ICT1\Semester3\Wetenschappers\obj\Debug\net6.0\ref\Wetenschappers.dll

@@ -1,0 +1,15 @@
+C:\Users\31618\Documents\school\ICT1\Semester3\Puzzles\bin\Debug\net6.0\Orders.exe
+C:\Users\31618\Documents\school\ICT1\Semester3\Puzzles\bin\Debug\net6.0\Orders.deps.json
+C:\Users\31618\Documents\school\ICT1\Semester3\Puzzles\bin\Debug\net6.0\Orders.runtimeconfig.json
+C:\Users\31618\Documents\school\ICT1\Semester3\Puzzles\bin\Debug\net6.0\Orders.dll
+C:\Users\31618\Documents\school\ICT1\Semester3\Puzzles\bin\Debug\net6.0\Orders.pdb
+C:\Users\31618\Documents\school\ICT1\Semester3\Puzzles\obj\Debug\net6.0\Orders.csproj.AssemblyReference.cache
+C:\Users\31618\Documents\school\ICT1\Semester3\Puzzles\obj\Debug\net6.0\Orders.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\31618\Documents\school\ICT1\Semester3\Puzzles\obj\Debug\net6.0\Orders.AssemblyInfoInputs.cache
+C:\Users\31618\Documents\school\ICT1\Semester3\Puzzles\obj\Debug\net6.0\Orders.AssemblyInfo.cs
+C:\Users\31618\Documents\school\ICT1\Semester3\Puzzles\obj\Debug\net6.0\Orders.csproj.CoreCompileInputs.cache
+C:\Users\31618\Documents\school\ICT1\Semester3\Puzzles\obj\Debug\net6.0\Orders.dll
+C:\Users\31618\Documents\school\ICT1\Semester3\Puzzles\obj\Debug\net6.0\refint\Orders.dll
+C:\Users\31618\Documents\school\ICT1\Semester3\Puzzles\obj\Debug\net6.0\Orders.pdb
+C:\Users\31618\Documents\school\ICT1\Semester3\Puzzles\obj\Debug\net6.0\Orders.genruntimeconfig.cache
+C:\Users\31618\Documents\school\ICT1\Semester3\Puzzles\obj\Debug\net6.0\ref\Orders.dll
