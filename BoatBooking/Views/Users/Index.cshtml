@@ -1,0 +1,60 @@
+﻿@using BoatBooking.Class
+@model UserViewModel
+
+<head>
+    <link rel="stylesheet" href="~/css/BoatHouse.css" />
+</head>
+
+<body class="addboatBody">
+    <a class="addBoatText" asp-controller="Users" asp-action="AddUser">
+        <div class="addBoat">
+            addUser
+            <input type="submit" value="+" style="padding: 0px 10px;">
+        </div>
+    </a>
+    <div class="TableContainer">
+        <div class="TableHeader">
+            <span class="name">Name</span>
+            <span class="type">Admin</span>
+            <span class="certifacate">Certifacates</span>
+            <span class="send" />
+        </div>
+        @foreach (User user in Model.users)
+        {
+            <div class="TableContent">
+                <span class="name">@user.Name</span>
+                @if (user.IsAdmin){
+                    <span class="type">yes</span>
+                } else{
+                    <span class="type">no</span>
+                }
+                <span class="certifacate">@user.Certificates</span>
+                <span class="send">
+                    <form asp-controller="Users" asp-action="RemoveUser">
+                        <p hidden="hidden">
+                            <input asp-for="User.Name" type="text" value="@user.Name" />
+                            <input asp-for="User.Id" type="number" value="@user.Id" />
+                            <input asp-for="User.Certificates" type="text" value="@user.Certificates" />
+                        </p>
+                        <input type="submit" value="-">
+                    </form>
+                </span>
+                <span class="send">
+                    <form method="get" asp-controller="Users" asp-action="EditUser">
+                        <p hidden="hidden">
+                            <input asp-for="User.Name" type="text" value="@user.Name" />
+                            <input asp-for="User.Id" type="number" value="@user.Id" />
+                            @if (user.IsAdmin){
+                                <input asp-for="User.IsAdmin" type="checkbox" checked/>
+                            } else {
+                                <input asp-for="User.IsAdmin" type="checkbox" />
+                            }
+                            <input asp-for="User.Certificates" type="text" value="@user.Certificates" />
+                        </p>
+                        <input type="submit" value="Edit">
+                    </form>
+                </span>
+            </div>
+        }
+    </div>
+</body>

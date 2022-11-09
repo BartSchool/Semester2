@@ -1,0 +1,78 @@
+﻿.addBoat, .TableContent, .TableContainer, .TableHeader {
+    box-shadow: -20px 20px 20px -23px black;
+}
+
+.addBoat {
+    background-color: #5483BF;
+    border-radius: 20px;
+    flex: 1;
+    text-align: left;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.addBoatText {
+    text-decoration-line: none;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Consolas;
+}
+
+a:hover {
+    text-decoration-line: none;
+    color: #fff;
+}
+
+.TableHeader {
+    background-color: #5483BF;
+    border-radius: 20px;
+    padding: 10px 25px;
+    display: flex;
+}
+
+.TableContent {
+    display: flex;
+    background-color: #6997BF;
+    border-radius: 20px;
+    margin: 15px;
+    padding: 10px;
+}
+
+.TableContainer {
+    background-color: #8EA8BF;
+    border-radius: 20px;
+    padding-bottom: 5px;
+}
+
+table {
+    width: 100%;
+}
+
+span {
+    display: inline-flex;
+    padding: 2px;
+    flex: 1;
+    font-size: 17px;
+}
+
+.name { 
+    flex: 0.4;
+}
+
+.type {
+    flex: 0.2;
+}
+
+.weight {
+    flex: 0.2;
+}
+
+.certifacate {
+    flex: 0.2;
+}
+
+.send {
+    flex: 0.06;
+}

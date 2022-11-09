@@ -1,0 +1,72 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.placeHolder{
+    background-color: darkorange;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+}
+
+.menuButton {
+    margin: 5px;
+}
+
+.containerHorizontal {
+    display: flex;
+    flex-direction:row;
+}
+
+.WhiteLine{
+    background-color: white;
+    display: flex;
+    flex:1;
+    height:5px;
+}
+
+.container {
+    margin-top: 10px;
+}
+
+header {
+    display: flex;
+    background-color: #3F77BF;
+    padding: 15px;
+    flex-direction: column;
+}
+
+input[type=submit] {
+    background-color: #2A4260;
+    border: none;
+    color: #fff;
+    padding: 0px 9px;
+    border-radius: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+body {
+    background-color: #F2E2C4;
+    flex: 1;
+    color: #fff;
+    font-family: Consolas;
+}

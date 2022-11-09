@@ -1,0 +1,59 @@
+﻿.addboatBody {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-content: center;
+    flex-flow: column;
+    background-color: #6997BF;
+    height: 100%;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.addBoatFormBody {
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.center {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #5483BF;
+    padding: 20px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.inputNumber{
+    width: 103px;
+}
+
+.input {
+    width: 302px;
+}
+
+input[type=text] {
+    background-color: #2A4260;
+    border: none;
+    color: #fff;
+    padding: 0px 9px;
+    border-radius: 20px;
+    text-decoration: none;
+    cursor: text;
+    text-align: center;
+    font-size: 16px;
+}
+
+::placeholder {
+    color: #6997BF;
+}
+
+.addboatBody, .center{
+    box-shadow: -20px 20px 20px -23px black;
+}

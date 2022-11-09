@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BoatBooking.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="containerHorizontal">
+                <div>
+                    <a class="menuButton" asp-controller="Booking" asp-action="Index">
+                        <input type="submit" value="Calendar"/>
+                    </a>
+                </div>
+                <div>
+                    <a class="menuButton" asp-controller="Boot" asp-action="Index">
+                        <input type="submit" value="Boathouse" />
+                    </a>
+                </div>
+                <div>
+                    <a class="menuButton" asp-controller="Users" asp-action="Index">
+                        <input type="submit" value="Users" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="WhiteLine"/>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top footer">
+        <div class="container">
+            &copy; 2022 - BoatBooking
+        </div>
+    </footer>
+</body>
+</html>

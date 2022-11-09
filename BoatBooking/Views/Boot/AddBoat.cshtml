@@ -1,0 +1,42 @@
+﻿@model AddBoatViewModel
+
+<head>
+    <link rel="stylesheet" href="~/css/addBoat.css" />
+</head>
+
+<form method="post" class="addboatBody">
+    <div style="display: none">
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="center">
+        <h3>Please fill in the form</h3>
+        <div class="addBoatFormBody">
+            @Html.ValidationMessage("name","", new { @class = "text-danger"})
+            <p>
+                <label asp-for="name">Name </label> 
+                <input asp-for="name" type="text" placeholder="name of the boat" class="input" />
+            </p>
+            @Html.ValidationMessage("type","", new { @class = "text-danger"})
+            <p>
+                <label asp-for="type">Type </label>
+                <input asp-for="type" type="text" placeholder="type of the boat" class="input" />
+            </p>
+            @Html.ValidationMessage("weight","", new { @class = "text-danger"})
+            <p>
+                <label asp-for="minWeight">weight class</label>
+                <a>
+                    <input asp-for="minWeight" type="text" placeholder="Min" class="inputNumber" />
+                        - 
+                    <input asp-for="maxWeight" type="text" placeholder="Max" class="inputNumber" />
+                </a>
+            </p>
+            @Html.ValidationMessage("certificates","", new { @class = "text-danger"})
+            <p>
+                <label asp-for="authorised">Certificates</label>
+                <input asp-for="authorised" type="text" placeholder="seperate by ','" oninput="this.value = this.value.toUpperCase()" />
+            </p>
+        </div>
+        <input type="submit" value="Add boat" />
+    </div>
+</form>

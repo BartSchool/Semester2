@@ -1,0 +1,53 @@
+﻿@using BoatBooking.Class
+@model BoathouseViewModel
+
+<head>
+    <link rel="stylesheet" href="~/css/BoatHouse.css"/>
+</head>
+
+<body class="addboatBody">
+    <a class="addBoatText" asp-controller="Boot" asp-action="AddBoat">
+        <div class="addBoat">
+            addBoat
+            <input type="submit" value="+" style="padding: 0px 10px;">
+        </div>
+    </a>
+    <div class="TableContainer">
+        <div class="TableHeader">
+            <span class="name">Name</span>
+            <span class="type">Type</span>
+            <span class="weight">Weight</span>
+            <span class="certifacate">Certifacates</span>
+            <span class="send"/>
+        </div>
+        @foreach (Boat boat in Model.boats)
+        {
+            <div class="TableContent">
+                <span class="name">@boat.Name</span>
+                <span class="type">@boat.type</span>
+                @if (boat.WeightMax == null){
+                    <span class="weight">nvt</span>
+                } else {
+                    <span class="weight">@boat.WeightMin.ToString() - @boat.WeightMax.ToString()</span>
+                }
+                @if (boat.authorizations == null){
+                    <span class="certifacate">nvt</span>
+                } else {
+                    <span class="certifacate">@boat.authorizations</span>
+                }
+                <span class="send">
+                    <form asp-controller="Boot" asp-action="RemoveBoat">
+                        <p hidden="hidden">
+                            <input asp-for="Boat.Name" type="text" value="@boat.Name" />
+                            <input asp-for="Boat.type" type="text" value="@boat.type" />
+                            <input asp-for="Boat.WeightMax" type="number" value="@boat.WeightMax" />
+                            <input asp-for="Boat.WeightMin" type="number" value="@boat.WeightMin" />
+                            <input asp-for="Boat.authorizations" type="text" value="@boat.authorizations" />
+                        </p>
+                        <input type="submit" value="-">
+                    </form>
+                </span>
+            </div>
+        }
+    </div>
+</body>

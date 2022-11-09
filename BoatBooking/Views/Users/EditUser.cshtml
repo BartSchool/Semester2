@@ -1,0 +1,43 @@
+﻿@model AddUserViewModel
+
+<head>
+    <link rel="stylesheet" href="~/css/addBoat.css" />
+</head>
+
+<form method="post" class="addboatBody">
+    <div style="display: none">
+        @Html.ValidationSummary()
+    </div>
+    <div class="center">
+        <h3>Please fill in the form</h3>
+        <div class="addBoatFormBody">
+            <p>
+                <label asp-for="UserName">Name </label>
+                <input asp-for="UserName" type="text" value="@Model.UserName" class="input" readonly />
+            </p>
+            @Html.ValidationMessage("admin","", new { @class = "text-danger"})
+            <p>
+                <label asp-for="NewIsAdmin">IsAdmin</label>
+                @if (Model.IsAdmin){
+                    <input asp-for="NewIsAdmin" type="checkbox" class="input" checked/>
+                } else {
+                    <input asp-for="NewIsAdmin" type="checkbox" class="input" />
+                }
+            </p>
+            @Html.ValidationMessage("certificates","", new { @class = "text-danger"})
+            <p>
+                <label asp-for="NewCertificates">Certificates</label>
+                <input asp-for="NewCertificates" type="text" class="input" placeholder="seperate by ','" value="@Model.Certificates" oninput="this.value = this.value.toUpperCase()" />
+            </p>
+        </div>
+        <div style="display: none">
+            <input asp-for="Certificates" type="text" value="@Model.Certificates"/>
+            @if (Model.IsAdmin) {
+                <input asp-for="IsAdmin" type="checkbox" class="input" checked />
+            } else {
+                <input asp-for="IsAdmin" type="checkbox" class="input" />
+            }
+        </div>
+        <input type="submit" value="Confirm Changes" />
+    </div>
+</form>
