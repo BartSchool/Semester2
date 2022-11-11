@@ -1,0 +1,15 @@
+C:\Users\31618\Documents\GitHub\Semester2\Algoritme\DeKameleons.View\bin\Debug\net6.0\DeKameleons.View.exe
+C:\Users\31618\Documents\GitHub\Semester2\Algoritme\DeKameleons.View\bin\Debug\net6.0\DeKameleons.View.deps.json
+C:\Users\31618\Documents\GitHub\Semester2\Algoritme\DeKameleons.View\bin\Debug\net6.0\DeKameleons.View.runtimeconfig.json
+C:\Users\31618\Documents\GitHub\Semester2\Algoritme\DeKameleons.View\bin\Debug\net6.0\DeKameleons.View.dll
+C:\Users\31618\Documents\GitHub\Semester2\Algoritme\DeKameleons.View\bin\Debug\net6.0\DeKameleons.View.pdb
+C:\Users\31618\Documents\GitHub\Semester2\Algoritme\DeKameleons.View\obj\Debug\net6.0\DeKameleons.View.csproj.AssemblyReference.cache
+C:\Users\31618\Documents\GitHub\Semester2\Algoritme\DeKameleons.View\obj\Debug\net6.0\DeKameleons.View.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\31618\Documents\GitHub\Semester2\Algoritme\DeKameleons.View\obj\Debug\net6.0\DeKameleons.View.AssemblyInfoInputs.cache
+C:\Users\31618\Documents\GitHub\Semester2\Algoritme\DeKameleons.View\obj\Debug\net6.0\DeKameleons.View.AssemblyInfo.cs
+C:\Users\31618\Documents\GitHub\Semester2\Algoritme\DeKameleons.View\obj\Debug\net6.0\DeKameleons.View.csproj.CoreCompileInputs.cache
+C:\Users\31618\Documents\GitHub\Semester2\Algoritme\DeKameleons.View\obj\Debug\net6.0\DeKameleons.View.dll
+C:\Users\31618\Documents\GitHub\Semester2\Algoritme\DeKameleons.View\obj\Debug\net6.0\refint\DeKameleons.View.dll
+C:\Users\31618\Documents\GitHub\Semester2\Algoritme\DeKameleons.View\obj\Debug\net6.0\DeKameleons.View.pdb
+C:\Users\31618\Documents\GitHub\Semester2\Algoritme\DeKameleons.View\obj\Debug\net6.0\DeKameleons.View.genruntimeconfig.cache
+C:\Users\31618\Documents\GitHub\Semester2\Algoritme\DeKameleons.View\obj\Debug\net6.0\ref\DeKameleons.View.dll
