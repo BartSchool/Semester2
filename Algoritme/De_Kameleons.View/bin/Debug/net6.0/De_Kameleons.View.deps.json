@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "De_Kameleons.View/1.0.0": {
+        "dependencies": {
+          "De_Kameleions.Core": "1.0.0"
+        },
+        "runtime": {
+          "De_Kameleons.View.dll": {}
+        }
+      },
+      "De_Kameleions.Core/1.0.0": {
+        "runtime": {
+          "De_Kameleions.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "De_Kameleons.View/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "De_Kameleions.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

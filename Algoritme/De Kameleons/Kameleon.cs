@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace De_Kameleons
+namespace DeKameleons.Core
 {
     public class Kameleon
     {
