@@ -1,4 +1,4 @@
-﻿namespace BoatBooking.Class
+﻿namespace BoatBookingCore
 {
     public class User
     {

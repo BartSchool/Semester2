@@ -1,11 +1,9 @@
-﻿using Microsoft.Build.Framework;
-
-namespace BoatBooking.Class
+﻿namespace BoatBookingCore
 {
     public class Boat
     {
-        [Required]public string Name { get; set; }
-        [Required]public string type { get; set; }
+        public string Name { get; set; }
+        public string type { get; set; }
         public int? WeightMax { get; set; }
         public int? WeightMin { get; set; }
         public string? authorizations { get; set; }

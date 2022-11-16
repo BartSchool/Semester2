@@ -1,11 +1,6 @@
-﻿using BoatBooking.Class;
-using BoatBooking.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
-using System.Collections.Generic;
-using System.Xml.Linq;
+﻿using Microsoft.AspNetCore.Mvc;
 
-namespace BoatBooking.Controllers
+namespace BoatBookingView.Controllers
 {
     public class BootController : Controller
     {

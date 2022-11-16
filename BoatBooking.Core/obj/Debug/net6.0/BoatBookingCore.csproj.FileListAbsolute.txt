@@ -1,0 +1,12 @@
+C:\Users\31618\Documents\GitHub\Semester2\BoatBooking.Core\obj\Debug\net6.0\BoatBookingCore.csproj.AssemblyReference.cache
+C:\Users\31618\Documents\GitHub\Semester2\BoatBooking.Core\obj\Debug\net6.0\BoatBookingCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\31618\Documents\GitHub\Semester2\BoatBooking.Core\obj\Debug\net6.0\BoatBookingCore.AssemblyInfoInputs.cache
+C:\Users\31618\Documents\GitHub\Semester2\BoatBooking.Core\obj\Debug\net6.0\BoatBookingCore.AssemblyInfo.cs
+C:\Users\31618\Documents\GitHub\Semester2\BoatBooking.Core\obj\Debug\net6.0\BoatBookingCore.csproj.CoreCompileInputs.cache
+C:\Users\31618\Documents\GitHub\Semester2\BoatBooking.Core\bin\Debug\net6.0\BoatBookingCore.deps.json
+C:\Users\31618\Documents\GitHub\Semester2\BoatBooking.Core\bin\Debug\net6.0\BoatBookingCore.dll
+C:\Users\31618\Documents\GitHub\Semester2\BoatBooking.Core\bin\Debug\net6.0\BoatBookingCore.pdb
+C:\Users\31618\Documents\GitHub\Semester2\BoatBooking.Core\obj\Debug\net6.0\BoatBookingCore.dll
+C:\Users\31618\Documents\GitHub\Semester2\BoatBooking.Core\obj\Debug\net6.0\refint\BoatBookingCore.dll
+C:\Users\31618\Documents\GitHub\Semester2\BoatBooking.Core\obj\Debug\net6.0\BoatBookingCore.pdb
+C:\Users\31618\Documents\GitHub\Semester2\BoatBooking.Core\obj\Debug\net6.0\ref\BoatBookingCore.dll

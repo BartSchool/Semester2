@@ -1,17 +1,15 @@
-﻿using BoatBooking.Class;
-using BoatBooking.Models;
+﻿using BoatBookingCore;
+using BoatBookingView.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BoatBooking.Controllers
 {
     public class UsersController : Controller
     {
-        private DataBase _dataBase = new DataBase();
-
         public IActionResult Index()
         {
             UserViewModel viewModel = new UserViewModel();
-            viewModel.users = _dataBase.GetUsersFromDataBase();
+            viewModel.users.GetUsers();
             return View(viewModel);
         }
 
@@ -27,24 +25,24 @@ namespace BoatBooking.Controllers
             // name error
             if (viewModel.UserName == null)
                 ModelState.AddModelError("name", "A name is required");
-            else if (_dataBase.DoesUserExistInDataBase(viewModel.UserName))
+            else if (new User(0, viewModel.UserName, viewModel.IsAdmin, viewModel.NewCertificates).DoesUserExist())
                 ModelState.AddModelError("name", "User name allready exists");
 
             // certificates error
             if (viewModel.Certificates != null)
-                if (!_dataBase.DoesStringContainRightCertificates(viewModel.Certificates))
+                if (new User(0, viewModel.UserName, viewModel.IsAdmin, viewModel.NewCertificates).AreCertificatesRight())
                     ModelState.AddModelError("Certificates", "please fill in correct certificates");
 
             if (!ModelState.IsValid)
                 return View(viewModel);
 
-            _dataBase.addUserToDb(viewModel.UserName, viewModel.IsAdmin, viewModel.Certificates);
+            new User(0, viewModel.UserName, viewModel.IsAdmin, viewModel.NewCertificates).addUser();
             return RedirectToAction("Index");
         }
 
         public IActionResult RemoveUser(UserViewModel viewModel)
         {
-            _dataBase.removeUserFromDb(viewModel.User.Id);
+            viewModel.User.deleteUser();
             return RedirectToAction("Index");
         }
 
@@ -64,18 +62,18 @@ namespace BoatBooking.Controllers
         public IActionResult EditUser(AddUserViewModel viewModel)
         {
             // admin error
-            if (_dataBase.AreWerRemovingLastAdmin(viewModel))
+            if (new User(0, viewModel.UserName, viewModel.IsAdmin, viewModel.NewCertificates).IsLastAdmin())
                 ModelState.AddModelError("admin", "There must always be one admin");
 
             // certificates error
             if (viewModel.NewCertificates != null)
-                if (!_dataBase.DoesStringContainRightCertificates(viewModel.NewCertificates))
+                if (new User(0, viewModel.UserName, viewModel.IsAdmin, viewModel.NewCertificates).AreCertificatesRight())
                     ModelState.AddModelError("Certificates", "please fill in correct certificates");
 
             if (!ModelState.IsValid)
                 return View(viewModel);
 
-            _dataBase.EditUser(viewModel);
+            new User(0, viewModel.UserName, viewModel.IsAdmin, viewModel.NewCertificates).editUser();
             return RedirectToAction("Index");
         }
     }

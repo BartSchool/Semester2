@@ -1,4 +1,7 @@
-﻿namespace De_Kameleons.View;
+﻿using De_Kameleions.Core;
+using System.Runtime.CompilerServices;
+
+namespace De_Kameleons.View;
 internal class Program
 {
     private static void Main()
@@ -6,15 +9,15 @@ internal class Program
         Util util = new Util();
         Console.OutputEncoding = System.Text.UnicodeEncoding.UTF8;
         Console.BackgroundColor = ConsoleColor.White;
-        bool changed = true;
-        string text = "Welcome to the internet";
-        while (true)
-        {
-            if (changed)
-                util.WriteKameleonsInEnclosure(new De_Kameleions.Core.Kameleon(ConsoleColor.Gray), new De_Kameleions.Core.Kameleon(ConsoleColor.Black));
-            Thread.Sleep(1000);
 
-            changed = false;
+        Enclosure enclosure = new Enclosure();
+        enclosure.SetStartingKameleons();
+
+        while (!enclosure.isDone)
+        {
+            util.showEncounter(enclosure);
         }
+
+        util.finishingScreen(enclosure);
     }
 }

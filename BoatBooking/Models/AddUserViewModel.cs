@@ -1,6 +1,6 @@
 ﻿using Microsoft.Build.Framework;
 
-namespace BoatBooking.Models
+namespace BoatBookingView.Models
 {
     public class AddUserViewModel
     {

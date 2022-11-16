@@ -1,7 +1,4 @@
-﻿using Microsoft.Build.Framework;
-using Microsoft.Data.SqlClient;
-
-namespace BoatBooking.Models
+﻿namespace BoatBookingView.Models
 {
     public class AddBoatViewModel
     {

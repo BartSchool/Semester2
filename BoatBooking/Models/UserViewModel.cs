@@ -1,15 +1,15 @@
-﻿using BoatBooking.Class;
+﻿using BoatBookingCore;
 
-namespace BoatBooking.Models
+namespace BoatBookingView.Models
 {
     public class UserViewModel
     {
-        public List<User>? users { get; set; }
-        public User User { get; set; }
+        public Users? users;
+        public User? User;
 
         public UserViewModel()
         {
-            User = new User(1, "test");
+
         }
     }
 }

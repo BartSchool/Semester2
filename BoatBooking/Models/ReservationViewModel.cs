@@ -1,6 +1,6 @@
-﻿using BoatBooking.Class;
+﻿using BoatBookingCore;
 
-namespace BoatBooking.Models
+namespace BoatBookingView.Models
 {
     public class ReservationViewModel
     {

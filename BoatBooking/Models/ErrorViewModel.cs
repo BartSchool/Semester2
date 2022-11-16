@@ -1,4 +1,4 @@
-namespace BoatBooking.Models
+namespace BoatBookingView.Models
 {
     public class ErrorViewModel
     {

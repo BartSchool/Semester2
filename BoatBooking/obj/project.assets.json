@@ -3431,6 +3431,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "BoatBookingCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BoatBookingCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BoatBookingCore.dll": {}
+        }
       }
     }
   },
@@ -9762,10 +9772,16 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "BoatBookingCore/1.0.0": {
+      "type": "project",
+      "path": "../BoatBooking.Core/BoatBookingCore.csproj",
+      "msbuildProject": "../BoatBooking.Core/BoatBookingCore.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BoatBookingCore >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.9",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.9"
@@ -9778,9 +9794,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\BoatBooking\\BoatBooking.csproj",
-      "projectName": "BoatBooking",
-      "projectPath": "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\BoatBooking\\BoatBooking.csproj",
+      "projectUniqueName": "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\BoatBooking\\BoatBookingView.csproj",
+      "projectName": "BoatBookingView",
+      "projectPath": "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\BoatBooking\\BoatBookingView.csproj",
       "packagesPath": "C:\\Users\\31618\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\BoatBooking\\obj\\",
       "projectStyle": "PackageReference",
@@ -9802,7 +9818,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\BoatBooking.Core\\BoatBookingCore.csproj": {
+              "projectPath": "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\BoatBooking.Core\\BoatBookingCore.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
