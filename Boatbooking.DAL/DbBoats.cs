@@ -1,4 +1,4 @@
-﻿using BoatBookingCore;
+﻿using BoatbookingDAL.DTO_s;
 using Microsoft.Data.SqlClient;
 
 namespace BoatbookingDAL
@@ -71,6 +71,7 @@ namespace BoatbookingDAL
 
             connection.Close();
         }
+        
         public void removeBoatFromDb(string name, string type)
         {
             using var connection = new SqlConnection(connectionString);
@@ -82,9 +83,9 @@ namespace BoatbookingDAL
             connection.Close();
         }
 
-        public List<Boat> GetBoatsFromDataBase()
+        public List<BoatDto> GetBoatsFromDataBase()
         {
-            List<Boat> boatList = new List<Boat>();
+            List<BoatDto> boatList = new List<BoatDto>();
 
             using var connection = new SqlConnection(connectionString);
 
@@ -113,15 +114,15 @@ namespace BoatbookingDAL
                         authorised = reader.GetString(5);
 
 
-                    boatList.Add(new Boat(name, type, max, min, authorised));
+                    boatList.Add(new BoatDto(name, type, max, min, authorised));
                 }
             connection.Close();
 
             return boatList;
         }
-        public List<Boat> GetBoatsFromDataBase(string Name)
+        public List<BoatDto> GetBoatsFromDataBase(string Name)
         {
-            List<Boat> boatList = new List<Boat>();
+            List<BoatDto> boatList = new List<BoatDto>();
 
             using var connection = new SqlConnection(connectionString);
 
@@ -150,15 +151,15 @@ namespace BoatbookingDAL
                         authorised = reader.GetString(5);
 
 
-                    boatList.Add(new Boat(name, type, max, min, authorised));
+                    boatList.Add(new BoatDto(name, type, max, min, authorised));
                 }
             connection.Close();
 
             return boatList;
         }
-        public List<Boat> GetBoatsFromDataBase(int id)
+        public List<BoatDto> GetBoatsFromDataBase(int id)
         {
-            List<Boat> boatList = new List<Boat>();
+            List<BoatDto> boatList = new List<BoatDto>();
 
             using var connection = new SqlConnection(connectionString);
 
@@ -187,7 +188,7 @@ namespace BoatbookingDAL
                         authorised = reader.GetString(5);
 
 
-                    boatList.Add(new Boat(name, type, max, min, authorised));
+                    boatList.Add(new BoatDto(name, type, max, min, authorised));
                 }
             connection.Close();
 
@@ -211,7 +212,6 @@ namespace BoatbookingDAL
             connection.Close();
             return boatTypes;
         }
-
         public bool DoesBoatExistInDataBase(string name)
         {
             using var connection = new SqlConnection(connectionString);
@@ -229,6 +229,31 @@ namespace BoatbookingDAL
 
             connection.Close();
             return false;
+        }
+        public bool DoesStringContainRightCertificates(string certificate)
+        {
+            List<string> correct = GetCertificatesFromDb();
+            bool result = true;
+
+            char[] chars = certificate.ToCharArray();
+            List<string> cert = new List<string>();
+            string test = "";
+
+            for (int i = 0; i < chars.Length; i++)
+            {
+                if (chars[i] != ',')
+                    test += chars[i];
+                else
+                {
+                    if (!correct.Contains(test))
+                        return false;
+                    test = "";
+                }
+            }
+            if (!correct.Contains(test))
+                return false;
+
+            return result;
         }
     }
 }

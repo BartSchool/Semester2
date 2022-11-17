@@ -1,9 +1,9 @@
-﻿using BoatBookingCore;
+﻿using BoatbookingDAL.DTO_s;
 using Microsoft.Data.SqlClient;
 
 namespace BoatbookingDAL
 {
-    internal class DbUsers
+    public class DbUsers
     {
         private readonly string connectionString = @"Server=LAPTOP-1JC5056U\SQLEXPRESS; Database=Bootbooking; Trusted_Connection=True";
 
@@ -74,9 +74,20 @@ namespace BoatbookingDAL
             connection.Close();
         }
 
-        public List<User> GetUsersFromDataBase()
+        public void removeUserFromDb(string name)
         {
-            List<User> users = new List<User>();
+            using var connection = new SqlConnection(connectionString);
+            connection.Open();
+
+            var command = new SqlCommand(" DELETE FROM Users WHERE Name = " + name, connection);
+            var reader = command.ExecuteReader();
+
+            connection.Close();
+        }
+
+        public List<UserDto> GetUsersFromDataBase()
+        {
+            List<UserDto> users = new List<UserDto>();
 
             using var connection = new SqlConnection(connectionString);
 
@@ -95,21 +106,20 @@ namespace BoatbookingDAL
                     if (!reader.IsDBNull(4))
                     {
                         certificates = reader.GetString(4);
-                        users.Add(new User(id, name, isAdmin, certificates));
+                        users.Add(new UserDto(id, name, isAdmin, certificates));
                     }
                     else
                     {
-                        users.Add(new User(id, name, isAdmin));
+                        users.Add(new UserDto(id, name, isAdmin));
                     }
                 }
 
             connection.Close();
             return users;
         }
-
-        public List<User> GetUsersFromDataBase(string Name)
+        public List<UserDto> GetUsersFromDataBase(string Name)
         {
-            List<User> users = new List<User>();
+            List<UserDto> users = new List<UserDto>();
 
             using var connection = new SqlConnection(connectionString);
 
@@ -134,9 +144,9 @@ namespace BoatbookingDAL
             connection.Close();
             return users;
         }
-        public List<User> GetUsersFromDataBase(int Id)
+        public List<UserDto> GetUsersFromDataBase(int Id)
         {
-            List<User> users = new List<User>();
+            List<UserDto> users = new List<UserDto>();
 
             using var connection = new SqlConnection(connectionString);
 
@@ -155,7 +165,7 @@ namespace BoatbookingDAL
                     if (isAdminread == 1)
                         isAdmin = true;
 
-                    users.Add(new User(id, name, isAdmin));
+                    users.Add(new UserDto(id, name, isAdmin));
                 }
 
             connection.Close();
@@ -181,67 +191,61 @@ namespace BoatbookingDAL
             return false;
         }
 
-        /*public bool AreWerRemovingLastAdmin(AddUserViewModel vm)
-        {
-            EditUser(vm);
-            if (AreThereAdmins())
-            {
-                ReverseEditUser(vm);
-                return false;
-            }
-            ReverseEditUser(vm);
-            return true;
-
-        }
-        public bool AreThereAdmins()
+        public int HowManyAdminsAreThere()
         {
             using var connection = new SqlConnection(connectionString);
+            int admins = 0;
 
             connection.Open();
 
             var command = new SqlCommand(" SELECT * FROM Users WHERE IsAdmin = 1", connection);
             var reader = command.ExecuteReader();
 
-            if (reader.HasRows)
+            while (reader.Read())
             {
-                connection.Close();
-                return true;
+                admins++;
             }
             connection.Close();
-            return false;
+            return admins;
         }
 
-        public void EditUser(AddUserViewModel vm)
+        public void EditUser(UserDto user)
         {
             int intAdmin = 0;
-            if (vm.NewIsAdmin)
+            if (user.IsAdmin)
                 intAdmin = 1;
             using var connection = new SqlConnection(connectionString);
 
             connection.Open();
 
             var command = new SqlCommand("UPDATE Users " +  
-                "SET IsAdmin = " + intAdmin + ", Certificates = '" + vm.NewCertificates + "' " +
-                "WHERE Name = '" + vm.UserName + "'", connection);
+                "SET IsAdmin = " + intAdmin + ", Certificates = '" + user.Certificates + "' " +
+                "WHERE Name = '" + user.Name + "'", connection);
             var reader = command.ExecuteReader();
 
             connection.Close();
         }
-        public void ReverseEditUser(AddUserViewModel vm)
+        public List<string> GetCertificatesFromDb()
         {
-            int intAdmin = 0;
-            if (vm.IsAdmin)
-                intAdmin = 1;
+            List<string> list = new List<String>();
+
             using var connection = new SqlConnection(connectionString);
 
             connection.Open();
 
-            var command = new SqlCommand("UPDATE Users " +
-                "SET IsAdmin = " + intAdmin + ", Certificates = '" + vm.Certificates + "' " +
-                "WHERE Name = '" + vm.UserName + "'", connection);
+            var command = new SqlCommand(" SELECT * FROM certificates", connection);
             var reader = command.ExecuteReader();
 
+            if (reader != null)
+                while (reader.Read())
+                {
+                    string a = reader.GetString(0);
+
+                    list.Add(a);
+                }
             connection.Close();
-        }*/
+
+            return list;
+        }
     }
 }

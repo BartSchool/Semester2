@@ -1,29 +1,33 @@
-﻿namespace BoatBookingCore
+﻿using BoatbookingDAL;
+using BoatbookingDAL.DTO_s;
+
+namespace BoatBookingCore
 {
     public class Boat
     {
+        private DbBoats _db = new DbBoats();
         public string Name { get; set; }
-        public string type { get; set; }
+        public string Type { get; set; }
         public int? WeightMax { get; set; }
         public int? WeightMin { get; set; }
-        public string? authorizations { get; set; }
+        public string? Authorizations { get; set; }
 
-        public Boat(string name, string type)
+        public Boat(BoatDto dto)
         {
-            Name = name;
-            this.type = type;
-            WeightMax = null;
-            WeightMin = null;
-            this.authorizations = null;
+            Name = dto.Name;
+            Type = dto.Type;
+            WeightMax = dto.WeightMax;
+            WeightMin = dto.WeightMin;
+            Authorizations = dto.Authorizations;
         }
 
-        public Boat( string name, string type, int? weightMax, int? weightMin, string? authorizations)
+        public Boat(string name, string type )
         {
             Name = name;
-            this.type = type;
-            WeightMax = weightMax;
-            WeightMin = weightMin;
-            this.authorizations = authorizations;
+            Type = type;
+            WeightMax = null;
+            WeightMin = null;
+            Authorizations = "";
         }
     }
 }

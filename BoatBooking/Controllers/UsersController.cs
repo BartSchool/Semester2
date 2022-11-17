@@ -25,24 +25,24 @@ namespace BoatBooking.Controllers
             // name error
             if (viewModel.UserName == null)
                 ModelState.AddModelError("name", "A name is required");
-            else if (new User(0, viewModel.UserName, viewModel.IsAdmin, viewModel.NewCertificates).DoesUserExist())
+            else if (new Users().DoesUserExist(viewModel.UserName))
                 ModelState.AddModelError("name", "User name allready exists");
 
             // certificates error
             if (viewModel.Certificates != null)
-                if (new User(0, viewModel.UserName, viewModel.IsAdmin, viewModel.NewCertificates).AreCertificatesRight())
+                if (new Users().AreCertificatesRight(viewModel.Certificates))
                     ModelState.AddModelError("Certificates", "please fill in correct certificates");
 
             if (!ModelState.IsValid)
                 return View(viewModel);
 
-            new User(0, viewModel.UserName, viewModel.IsAdmin, viewModel.NewCertificates).addUser();
+            new Users().AddUser(viewModel.UserName, viewModel.IsAdmin, viewModel.Certificates);
             return RedirectToAction("Index");
         }
 
         public IActionResult RemoveUser(UserViewModel viewModel)
         {
-            viewModel.User.deleteUser();
+            new Users().RemoveUser(viewModel.User.Id);
             return RedirectToAction("Index");
         }
 
@@ -62,12 +62,12 @@ namespace BoatBooking.Controllers
         public IActionResult EditUser(AddUserViewModel viewModel)
         {
             // admin error
-            if (new User(0, viewModel.UserName, viewModel.IsAdmin, viewModel.NewCertificates).IsLastAdmin())
+            if (new Users().IsLastAdmin())
                 ModelState.AddModelError("admin", "There must always be one admin");
 
             // certificates error
             if (viewModel.NewCertificates != null)
-                if (new User(0, viewModel.UserName, viewModel.IsAdmin, viewModel.NewCertificates).AreCertificatesRight())
+                if (new Users().AreCertificatesRight(viewModel.NewCertificates))
                     ModelState.AddModelError("Certificates", "please fill in correct certificates");
 
             if (!ModelState.IsValid)

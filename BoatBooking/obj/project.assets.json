@@ -3435,11 +3435,27 @@
       "BoatBookingCore/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BoatbookingDAL": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/BoatBookingCore.dll": {}
         },
         "runtime": {
           "bin/placeholder/BoatBookingCore.dll": {}
+        }
+      },
+      "BoatbookingDAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.Data.SqlClient": "2.1.4"
+        },
+        "compile": {
+          "bin/placeholder/BoatbookingDAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BoatbookingDAL.dll": {}
         }
       }
     }
@@ -9777,6 +9793,11 @@
       "type": "project",
       "path": "../BoatBooking.Core/BoatBookingCore.csproj",
       "msbuildProject": "../BoatBooking.Core/BoatBookingCore.csproj"
+    },
+    "BoatbookingDAL/1.0.0": {
+      "type": "project",
+      "path": "../Boatbooking.DAL/BoatbookingDAL.csproj",
+      "msbuildProject": "../Boatbooking.DAL/BoatbookingDAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
