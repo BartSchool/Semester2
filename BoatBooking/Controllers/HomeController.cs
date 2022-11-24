@@ -1,4 +1,4 @@
-﻿using BoatBooking.Models;
+﻿using BoatBookingView.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BoatBooking.Core\BoatBookingCore.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -8,7 +8,7 @@ namespace BoatBookingView.Models
 
         public ReservationViewModel()
         {
-
+            reservations = new List<Reservation>();
         }
     }
 }

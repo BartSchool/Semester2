@@ -3,3 +3,10 @@ C:\Users\31618\Documents\GitHub\Semester2\Boatbooking.DAL\obj\Debug\net6.0\Boatb
 C:\Users\31618\Documents\GitHub\Semester2\Boatbooking.DAL\obj\Debug\net6.0\BoatbookingDAL.AssemblyInfoInputs.cache
 C:\Users\31618\Documents\GitHub\Semester2\Boatbooking.DAL\obj\Debug\net6.0\BoatbookingDAL.AssemblyInfo.cs
 C:\Users\31618\Documents\GitHub\Semester2\Boatbooking.DAL\obj\Debug\net6.0\BoatbookingDAL.csproj.CoreCompileInputs.cache
+C:\Users\31618\Documents\GitHub\Semester2\Boatbooking.DAL\bin\Debug\net6.0\BoatbookingDAL.deps.json
+C:\Users\31618\Documents\GitHub\Semester2\Boatbooking.DAL\bin\Debug\net6.0\BoatbookingDAL.dll
+C:\Users\31618\Documents\GitHub\Semester2\Boatbooking.DAL\bin\Debug\net6.0\BoatbookingDAL.pdb
+C:\Users\31618\Documents\GitHub\Semester2\Boatbooking.DAL\obj\Debug\net6.0\BoatbookingDAL.dll
+C:\Users\31618\Documents\GitHub\Semester2\Boatbooking.DAL\obj\Debug\net6.0\refint\BoatbookingDAL.dll
+C:\Users\31618\Documents\GitHub\Semester2\Boatbooking.DAL\obj\Debug\net6.0\BoatbookingDAL.pdb
+C:\Users\31618\Documents\GitHub\Semester2\Boatbooking.DAL\obj\Debug\net6.0\ref\BoatbookingDAL.dll

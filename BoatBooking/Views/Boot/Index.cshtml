@@ -1,5 +1,4 @@
-﻿@using BoatBooking.Class
-@model BoathouseViewModel
+﻿@model BoathouseViewModel
 
 <head>
     <link rel="stylesheet" href="~/css/BoatHouse.css"/>
@@ -20,29 +19,29 @@
             <span class="certifacate">Certifacates</span>
             <span class="send"/>
         </div>
-        @foreach (Boat boat in Model.boats)
+        @foreach (Boat boat in Model.boats.GetBoats())
         {
             <div class="TableContent">
                 <span class="name">@boat.Name</span>
-                <span class="type">@boat.type</span>
+                <span class="type">@boat.Type</span>
                 @if (boat.WeightMax == null){
                     <span class="weight">nvt</span>
                 } else {
                     <span class="weight">@boat.WeightMin.ToString() - @boat.WeightMax.ToString()</span>
                 }
-                @if (boat.authorizations == null){
+                @if (boat.Authorizations == null){
                     <span class="certifacate">nvt</span>
                 } else {
-                    <span class="certifacate">@boat.authorizations</span>
+                    <span class="certifacate">@boat.Authorizations</span>
                 }
                 <span class="send">
                     <form asp-controller="Boot" asp-action="RemoveBoat">
                         <p hidden="hidden">
                             <input asp-for="Boat.Name" type="text" value="@boat.Name" />
-                            <input asp-for="Boat.type" type="text" value="@boat.type" />
+                            <input asp-for="Boat.Type" type="text" value="@boat.Type" />
                             <input asp-for="Boat.WeightMax" type="number" value="@boat.WeightMax" />
                             <input asp-for="Boat.WeightMin" type="number" value="@boat.WeightMin" />
-                            <input asp-for="Boat.authorizations" type="text" value="@boat.authorizations" />
+                            <input asp-for="Boat.Authorizations" type="text" value="@boat.Authorizations" />
                         </p>
                         <input type="submit" value="-">
                     </form>

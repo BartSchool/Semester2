@@ -455,6 +455,16 @@
             "rid": "win"
           }
         }
+      },
+      "BoatBookingCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BoatBookingCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BoatBookingCore.dll": {}
+        }
       }
     }
   },
@@ -1275,10 +1285,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "BoatBookingCore/1.0.0": {
+      "type": "project",
+      "path": "../BoatBooking.Core/BoatBookingCore.csproj",
+      "msbuildProject": "../BoatBooking.Core/BoatBookingCore.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BoatBookingCore >= 1.0.0",
       "Microsoft.Data.SqlClient >= 2.1.4"
     ]
   },
@@ -1313,7 +1329,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\BoatBooking.Core\\BoatBookingCore.csproj": {
+              "projectPath": "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\BoatBooking.Core\\BoatBookingCore.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,5 +1,4 @@
-﻿@using BoatBooking.Class
-@model UserViewModel
+﻿@model UserViewModel
 
 <head>
     <link rel="stylesheet" href="~/css/BoatHouse.css" />
@@ -19,7 +18,7 @@
             <span class="certifacate">Certifacates</span>
             <span class="send" />
         </div>
-        @foreach (User user in Model.users)
+        @foreach (User user in Model.users.GetUsers())
         {
             <div class="TableContent">
                 <span class="name">@user.Name</span>

@@ -9,6 +9,7 @@ namespace BoatBooking.Controllers
         public IActionResult Index()
         {
             UserViewModel viewModel = new UserViewModel();
+            viewModel.users = new Users();
             viewModel.users.GetUsers();
             return View(viewModel);
         }

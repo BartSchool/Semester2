@@ -20,7 +20,7 @@
             @Html.ValidationMessage("type","", new { @class = "text-danger"})
             <p>
                 <label asp-for="type">Type </label>
-                <input asp-for="type" type="text" placeholder="type of the boat" class="input" />
+                <input asp-for="type" type="text" placeholder="type of the boat" class="input" oninput="this.value = this.value.toLowerCase()" />
             </p>
             @Html.ValidationMessage("weight","", new { @class = "text-danger"})
             <p>

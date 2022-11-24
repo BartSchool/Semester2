@@ -1,11 +1,9 @@
-﻿using BoatbookingDAL;
-using BoatbookingDAL.DTO_s;
+﻿using BoatBookingCore.Dto;
 
 namespace BoatBookingCore
 {
     public class Boat
     {
-        private DbBoats _db = new DbBoats();
         public string Name { get; set; }
         public string Type { get; set; }
         public int? WeightMax { get; set; }

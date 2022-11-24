@@ -1,11 +1,10 @@
-﻿using BoatbookingDAL.DTO_s;
-using BoatbookingDAL;
+﻿using BoatBookingCore.Dto;
 
 namespace BoatBookingCore
 {
     public class User
     {
-        private DbUsers _db; // volgende stap: ipv DbUsers, maka je IDbUsers (staat in core) -> geef de IDbUser mee in de constructor
+        // volgende stap: ipv DbUsers, maka je IDbUsers (staat in core) -> geef de IDbUser mee in de constructor
         public int? Id { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
@@ -39,11 +38,6 @@ namespace BoatBookingCore
         {
             IsAdmin = isAdmin;
             Certificates = certificates;
-        }
-
-        public void editUser()
-        {
-            _db.EditUser(new UserDto(Name, IsAdmin, Certificates));
         }
     }
 }

@@ -1,13 +1,18 @@
-﻿using BoatbookingDAL.DTO_s;
+﻿using BoatBookingCore.Interface;
+using BoatBookingCore.Dto;
 using Microsoft.Data.SqlClient;
+using BoatBookingCore;
+using System.Xml.Linq;
 
 namespace BoatbookingDAL
 {
-    public class DbUsers
+    public class DbUsers : IDataBaseUsers
     {
         private readonly string connectionString = @"Server=LAPTOP-1JC5056U\SQLEXPRESS; Database=Bootbooking; Trusted_Connection=True";
 
-        public void addUserToDb(string name, bool isAdmin, string certificates)
+        public List<UserDto> users { get => GetUsersFromDataBase(); set => throw new NotImplementedException(); }
+
+        private void addUserToDb(string name, bool isAdmin, string certificates)
         {
             using var connection = new SqlConnection(connectionString);
             int isAdminInt = 0;
@@ -27,7 +32,7 @@ namespace BoatbookingDAL
 
             connection.Close();
         }
-        public void addUserToDb(string name, bool isAdmin)
+        private void addUserToDb(string name, bool isAdmin)
         {
             using var connection = new SqlConnection(connectionString);
             int isAdminInt = 0;
@@ -47,7 +52,7 @@ namespace BoatbookingDAL
 
             connection.Close();
         }
-        public void addUserToDb(string name)
+        private void addUserToDb(string name)
         {
             using var connection = new SqlConnection(connectionString);
             connection.Open();
@@ -63,29 +68,8 @@ namespace BoatbookingDAL
 
             connection.Close();
         }
-        public void removeUserFromDb(int id)
-        {
-            using var connection = new SqlConnection(connectionString);
-            connection.Open();
 
-            var command = new SqlCommand(" DELETE FROM Users WHERE ID = " + id, connection);
-            var reader = command.ExecuteReader();
-
-            connection.Close();
-        }
-
-        public void removeUserFromDb(string name)
-        {
-            using var connection = new SqlConnection(connectionString);
-            connection.Open();
-
-            var command = new SqlCommand(" DELETE FROM Users WHERE Name = " + name, connection);
-            var reader = command.ExecuteReader();
-
-            connection.Close();
-        }
-
-        public List<UserDto> GetUsersFromDataBase()
+        private List<UserDto> GetUsersFromDataBase()
         {
             List<UserDto> users = new List<UserDto>();
 
@@ -117,7 +101,7 @@ namespace BoatbookingDAL
             connection.Close();
             return users;
         }
-        public List<UserDto> GetUsersFromDataBase(string Name)
+        private List<UserDto> GetUsersFromDataBase(string Name)
         {
             List<UserDto> users = new List<UserDto>();
 
@@ -138,13 +122,13 @@ namespace BoatbookingDAL
                     if (isAdminread == 1)
                         isAdmin = true;
 
-                    users.Add(new User(id, name, isAdmin));
+                    users.Add(new UserDto(id, name, isAdmin));
                 }
 
             connection.Close();
             return users;
         }
-        public List<UserDto> GetUsersFromDataBase(int Id)
+        private List<UserDto> GetUsersFromDataBase(int Id)
         {
             List<UserDto> users = new List<UserDto>();
 
@@ -172,26 +156,7 @@ namespace BoatbookingDAL
             return users;
         }
 
-        public bool DoesUserExistInDataBase(string name)
-        {
-            using var connection = new SqlConnection(connectionString);
-
-            connection.Open();
-
-            var command = new SqlCommand(" SELECT * FROM Users where name = '" + name + "'", connection);
-            var reader = command.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                connection.Close();
-                return true;
-            }
-
-            connection.Close();
-            return false;
-        }
-
-        public int HowManyAdminsAreThere()
+        private int HowManyAdminsAreThere()
         {
             using var connection = new SqlConnection(connectionString);
             int admins = 0;
@@ -225,7 +190,33 @@ namespace BoatbookingDAL
 
             connection.Close();
         }
-        public List<string> GetCertificatesFromDb()
+
+        private bool DoesStringContainRightCertificates(string certificate)
+        {
+            List<string> correct = GetCertificatesFromDb();
+            bool result = true;
+
+            char[] chars = certificate.ToCharArray();
+            List<string> cert = new List<string>();
+            string test = "";
+
+            for (int i = 0; i < chars.Length; i++)
+            {
+                if (chars[i] != ',')
+                    test += chars[i];
+                else
+                {
+                    if (!correct.Contains(test))
+                        return false;
+                    test = "";
+                }
+            }
+            if (!correct.Contains(test))
+                return false;
+
+            return result;
+        }
+        private List<string> GetCertificatesFromDb()
         {
             List<string> list = new List<String>();
 
@@ -246,6 +237,55 @@ namespace BoatbookingDAL
             connection.Close();
 
             return list;
+        }
+
+        public bool AreCertificatesRight(UserDto user)
+        {
+            return DoesStringContainRightCertificates(user.Certificates);
+        }
+
+        public bool DoesUserExist(UserDto user)
+        {
+            using var connection = new SqlConnection(connectionString);
+            connection.Open();
+
+            var command = new SqlCommand(" SELECT * FROM Users where name = '" + user.Name + "'", connection);
+            var reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                connection.Close();
+                return true;
+            }
+
+            connection.Close();
+            return false;
+        }
+
+        public void RemoveUser(UserDto user)
+        {
+            using var connection = new SqlConnection(connectionString);
+            connection.Open();
+
+            var command = new SqlCommand(" DELETE FROM Users WHERE ID = " + user.Id, connection);
+            var reader = command.ExecuteReader();
+
+            connection.Close();
+        }
+
+        public void AddUser(UserDto user)
+        {
+            if (user.Certificates == null)
+                addUserToDb(user.Name, user.IsAdmin);
+            else
+                addUserToDb(user.Name, user.IsAdmin, user.Certificates);
+        }
+
+        public bool IsLastAdmin()
+        {
+            if (HowManyAdminsAreThere() == 1)
+                return true;
+            return false;
         }
     }
 }

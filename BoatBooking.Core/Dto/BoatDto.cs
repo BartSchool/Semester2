@@ -1,4 +1,4 @@
-﻿namespace BoatbookingDAL.DTO_s
+﻿namespace BoatBookingCore.Dto
 {
     public class BoatDto
     {
@@ -8,14 +8,10 @@
         public int? WeightMin { get; set; }
         public string? Authorizations { get; set; }
 
-        public BoatDto(string name, string type) 
+        public BoatDto(string name, string type, int? weightMax, int? weightMin, string? authorizations)
         {
             Name = name;
             Type = type;
-        }
-
-        public BoatDto(string name, string type, int? weightMax, int? weightMin, string? authorizations) : this(name, type)
-        {
             WeightMax = weightMax;
             WeightMin = weightMin;
             Authorizations = authorizations;

@@ -1,52 +1,18 @@
-﻿using BoatbookingDAL;
-using BoatbookingDAL.DTO_s;
+﻿using BoatBookingCore.Interface;
+using BoatBookingCore.Dto;
 
 namespace BoatBookingCore
 {
     public class Users
     {
-        private DbUsers _db = new DbUsers();
-        private List<User> users;
+        // 1. wat is een C# interface? 2. Hoe kan ik die hier gebruikeN?
+        public List<User> userList;
 
-        public List<User> GetUsers()
+        public Users(IDataBaseUsers db)
         {
-            List<UserDto> usersDto = _db.GetUsersFromDataBase();
-            foreach (UserDto user in usersDto)
-                users.Add(new User(user));
-
-            return users;
-        }
-
-        public void AddUser(string n, bool a, string c)
-        {
-            if (c != null)
-                _db.addUserToDb(n, a, c);
-            else
-                _db.addUserToDb(n, a);
-        }
-
-        public void RemoveUser(int? id)
-        {
-            _db.removeUserFromDb((int)id);
-        }
-
-        public bool AreCertificatesRight(string c)
-        {
-            if (_db.GetCertificatesFromDb().Contains(c))
-                return true;
-            return false;
-        }
-
-        public bool DoesUserExist(string name)
-        {
-            return _db.DoesUserExistInDataBase(name);
-        }
-
-        public bool IsLastAdmin()
-        {
-            if (_db.HowManyAdminsAreThere() == 1)
-                return true;
-            return false;
+            userList = new List<User>();
+            foreach (UserDto dto in db.users)
+                userList.Add(new User(dto));
         }
     }
 }

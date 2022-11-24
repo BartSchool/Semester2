@@ -9,7 +9,7 @@ namespace BoatBookingView.Controllers
         public IActionResult Index()
         {
             BoathouseViewModel viewModel = new BoathouseViewModel();
-            viewModel.boats = new Boats().GetBoats();
+            viewModel.boats.GetBoats();
             return View(viewModel);
         }
 
@@ -34,7 +34,7 @@ namespace BoatBookingView.Controllers
                 // type errors
                 if (viewModel.type == null)
                     ModelState.AddModelError("type", "a type is required");
-                else if (new Boats().IsBoatTypeCorrect(viewModel.type))
+                else if (!new Boats().IsBoatTypeCorrect(viewModel.type.ToLower()))
                     ModelState.AddModelError("type", viewModel.type + " is not an accepted boat type");
 
                 // weight errors
