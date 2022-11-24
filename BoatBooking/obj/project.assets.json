@@ -3441,6 +3441,20 @@
         "runtime": {
           "bin/placeholder/BoatBookingCore.dll": {}
         }
+      },
+      "BoatbookingDAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BoatBookingCore": "1.0.0",
+          "Microsoft.Data.SqlClient": "2.1.4"
+        },
+        "compile": {
+          "bin/placeholder/BoatbookingDAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BoatbookingDAL.dll": {}
+        }
       }
     }
   },
@@ -9777,11 +9791,17 @@
       "type": "project",
       "path": "../BoatBooking.Core/BoatBookingCore.csproj",
       "msbuildProject": "../BoatBooking.Core/BoatBookingCore.csproj"
+    },
+    "BoatbookingDAL/1.0.0": {
+      "type": "project",
+      "path": "../Boatbooking.DAL/BoatbookingDAL.csproj",
+      "msbuildProject": "../Boatbooking.DAL/BoatbookingDAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "BoatBookingCore >= 1.0.0",
+      "BoatbookingDAL >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.9",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.9"
@@ -9821,6 +9841,9 @@
           "projectReferences": {
             "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\BoatBooking.Core\\BoatBookingCore.csproj": {
               "projectPath": "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\BoatBooking.Core\\BoatBookingCore.csproj"
+            },
+            "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\Boatbooking.DAL\\BoatbookingDAL.csproj": {
+              "projectPath": "C:\\Users\\31618\\Documents\\GitHub\\Semester2\\Boatbooking.DAL\\BoatbookingDAL.csproj"
             }
           }
         }

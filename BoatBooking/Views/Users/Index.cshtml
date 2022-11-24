@@ -18,7 +18,7 @@
             <span class="certifacate">Certifacates</span>
             <span class="send" />
         </div>
-        @foreach (User user in Model.users.GetUsers())
+        @foreach (User user in Model.users.userList)
         {
             <div class="TableContent">
                 <span class="name">@user.Name</span>
@@ -29,7 +29,7 @@
                 }
                 <span class="certifacate">@user.Certificates</span>
                 <span class="send">
-                    <form asp-controller="Users" asp-action="RemoveUser">
+                    <form method="post" asp-controller="Users" asp-action="RemoveUser">
                         <p hidden="hidden">
                             <input asp-for="User.Name" type="text" value="@user.Name" />
                             <input asp-for="User.Id" type="number" value="@user.Id" />

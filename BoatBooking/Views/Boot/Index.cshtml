@@ -19,7 +19,7 @@
             <span class="certifacate">Certifacates</span>
             <span class="send"/>
         </div>
-        @foreach (Boat boat in Model.boats.GetBoats())
+        @foreach (Boat boat in Model.boats.BoatList)
         {
             <div class="TableContent">
                 <span class="name">@boat.Name</span>

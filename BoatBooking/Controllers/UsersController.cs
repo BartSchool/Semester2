@@ -1,4 +1,5 @@
 ﻿using BoatBookingCore;
+using BoatbookingDAL;
 using BoatBookingView.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,8 +10,6 @@ namespace BoatBooking.Controllers
         public IActionResult Index()
         {
             UserViewModel viewModel = new UserViewModel();
-            viewModel.users = new Users();
-            viewModel.users.GetUsers();
             return View(viewModel);
         }
 
@@ -26,24 +25,25 @@ namespace BoatBooking.Controllers
             // name error
             if (viewModel.UserName == null)
                 ModelState.AddModelError("name", "A name is required");
-            else if (new Users().DoesUserExist(viewModel.UserName))
+            else if (new Users(new DbUsers()).DoesUserExist(viewModel.UserName))
                 ModelState.AddModelError("name", "User name allready exists");
 
             // certificates error
             if (viewModel.Certificates != null)
-                if (new Users().AreCertificatesRight(viewModel.Certificates))
+                if (!new Users(new DbUsers()).AreCertificatesRight(viewModel.Certificates))
                     ModelState.AddModelError("Certificates", "please fill in correct certificates");
 
             if (!ModelState.IsValid)
                 return View(viewModel);
 
-            new Users().AddUser(viewModel.UserName, viewModel.IsAdmin, viewModel.Certificates);
+            new Users(new DbUsers()).AddUser(viewModel.UserName, viewModel.IsAdmin, viewModel.Certificates);
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
         public IActionResult RemoveUser(UserViewModel viewModel)
         {
-            new Users().RemoveUser(viewModel.User.Id);
+            new Users(new DbUsers()).RemoveUser(viewModel.User);
             return RedirectToAction("Index");
         }
 
@@ -63,18 +63,20 @@ namespace BoatBooking.Controllers
         public IActionResult EditUser(AddUserViewModel viewModel)
         {
             // admin error
-            if (new Users().IsLastAdmin())
-                ModelState.AddModelError("admin", "There must always be one admin");
+            if (!viewModel.NewIsAdmin && viewModel.IsAdmin)
+                if (new Users(new DbUsers()).IsLastAdmin())
+                    ModelState.AddModelError("admin", "There must always be one admin");
 
             // certificates error
             if (viewModel.NewCertificates != null)
-                if (new Users().AreCertificatesRight(viewModel.NewCertificates))
+                if (!new Users(new DbUsers()).AreCertificatesRight(viewModel.NewCertificates))
                     ModelState.AddModelError("Certificates", "please fill in correct certificates");
 
             if (!ModelState.IsValid)
                 return View(viewModel);
 
-            new User(0, viewModel.UserName, viewModel.IsAdmin, viewModel.NewCertificates).editUser();
+            new User(new DbUsers()).EditUser(new User(viewModel.UserName, viewModel.NewIsAdmin, viewModel.NewCertificates));
+
             return RedirectToAction("Index");
         }
     }

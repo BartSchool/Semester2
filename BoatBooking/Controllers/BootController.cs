@@ -1,6 +1,7 @@
 ﻿using BoatBookingView.Models;
 using BoatBookingCore;
 using Microsoft.AspNetCore.Mvc;
+using BoatbookingDAL;
 
 namespace BoatBookingView.Controllers
 {
@@ -9,7 +10,6 @@ namespace BoatBookingView.Controllers
         public IActionResult Index()
         {
             BoathouseViewModel viewModel = new BoathouseViewModel();
-            viewModel.boats.GetBoats();
             return View(viewModel);
         }
 
@@ -22,19 +22,20 @@ namespace BoatBookingView.Controllers
 
         [HttpPost]
         public IActionResult AddBoat(AddBoatViewModel viewModel)
-    {
+        {
             if (ModelState.IsValid)
             {
+                // Specification patterns!! fluentvalidations
                 // name errors
                 if (viewModel.name == null)
                     ModelState.AddModelError("name", "a name is required");
-                else if (new Boats().doesBoatExist(viewModel.name))
+                else if (new Boats(new DbBoats()).doesBoatExist(viewModel.name, viewModel.type, viewModel.minWeight, viewModel.maxWeight, viewModel.authorised))
                     ModelState.AddModelError("name", "Boat allready exists");
 
                 // type errors
                 if (viewModel.type == null)
                     ModelState.AddModelError("type", "a type is required");
-                else if (!new Boats().IsBoatTypeCorrect(viewModel.type.ToLower()))
+                else if (!new Boats(new DbBoats()).IsBoatTypeCorrect(viewModel.name, viewModel.type, viewModel.minWeight, viewModel.maxWeight, viewModel.authorised))
                     ModelState.AddModelError("type", viewModel.type + " is not an accepted boat type");
 
                 // weight errors
@@ -45,13 +46,13 @@ namespace BoatBookingView.Controllers
 
                 // certificates error
                 if (viewModel.authorised != null)
-                    if (!new Boats().IsCertificatesRight(viewModel.authorised))
+                    if (!new Boats(new DbBoats()).IsCertificatesRight(viewModel.name, viewModel.type, viewModel.minWeight, viewModel.maxWeight, viewModel.authorised))
                         ModelState.AddModelError("Certificates", "please fill in correct certificates");
 
                 if (!ModelState.IsValid)
                     return View(viewModel);
 
-                new Boats().AddBoat(viewModel.name, viewModel.type, viewModel.minWeight, viewModel.maxWeight, viewModel.authorised);
+                new Boats(new DbBoats()).AddBoat(viewModel.name, viewModel.type, viewModel.minWeight, viewModel.maxWeight, viewModel.authorised);
             }
                     
             return RedirectToAction("Index");
@@ -59,7 +60,7 @@ namespace BoatBookingView.Controllers
 
         public IActionResult RemoveBoat(BoathouseViewModel b)
         {
-            new Boats().RemoveBoat(new Boat(b.Boat.Name, b.Boat.Type));
+            b.boats.RemoveBoat(new Boat(b.Boat.Name, b.Boat.Type));
             return RedirectToAction("Index");
         }
 

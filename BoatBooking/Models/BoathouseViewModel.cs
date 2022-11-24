@@ -1,16 +1,17 @@
 ﻿using BoatBookingCore;
 using BoatBookingCore.Interface;
+using BoatbookingDAL;
 
 namespace BoatBookingView.Models
 {
     public class BoathouseViewModel
     {
         public Boat Boat { get; set; }
-        public IDbBoats boats { get; set; }
+        public Boats boats { get; set; }
 
         public BoathouseViewModel()
         {
-            boats = new Boats();
+            boats = new Boats(new DbBoats());
             Boat = new Boat("", "");
         }
     }

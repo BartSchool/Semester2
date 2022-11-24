@@ -1,15 +1,14 @@
 ﻿using BoatBookingCore.Dto;
 
-namespace BoatBookingCore.Interface
-{
-    public interface IDataBaseUsers
-    {
-        List<UserDto> users { get; set; }
+namespace BoatBookingCore.Interface;
 
-        bool AreCertificatesRight(UserDto user);
-        bool DoesUserExist(UserDto user);
-        void RemoveUser(UserDto user);
-        void AddUser(UserDto user);
-        bool IsLastAdmin();
-    }
+public interface IDataBaseUsers
+{
+    List<UserDto> users { get; }
+
+    bool AreCertificatesRight(string certificates);
+    bool DoesUserExist(string name);
+    void RemoveUser(UserDto user);
+    void AddUser(UserDto user);
+    bool IsLastAdmin();
 }

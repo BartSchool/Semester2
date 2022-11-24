@@ -1,16 +1,17 @@
 ﻿using BoatBookingCore;
+using BoatbookingDAL;
 
 namespace BoatBookingView.Models
 {
     public class UserViewModel
     {
         public Users users;
-        public User User;
+        public User User { get; set; }
 
         public UserViewModel()
         {
-            users = new Users();
-            User = new User(0,"");
+            users = new Users(new DbUsers());
+            User = new User(new DbUsers());
         }
     }
 }

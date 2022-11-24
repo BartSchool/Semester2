@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BoatBooking.Core\BoatBookingCore.csproj" />
+    <ProjectReference Include="..\Boatbooking.DAL\BoatbookingDAL.csproj" />
   </ItemGroup>
 
 </Project>
