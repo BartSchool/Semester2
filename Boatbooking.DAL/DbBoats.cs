@@ -26,6 +26,7 @@ public class DbBoats : IDbBoats
 
         connection.Close();
     }
+
     private void addBoatToDb(string name, string type, string Authorised)
     {
         using var connection = new SqlConnection(connectionString);
@@ -42,6 +43,7 @@ public class DbBoats : IDbBoats
 
         connection.Close();
     }
+
     private void addBoatToDb(string name, string type, int? weightMin, int? weightMax)
     {
         using var connection = new SqlConnection(connectionString);
@@ -58,6 +60,7 @@ public class DbBoats : IDbBoats
 
         connection.Close();
     }
+
     private void addBoatToDb(string name, string type, int? weightMin, int? weightMax, string? Authorised)
     {
         using var connection = new SqlConnection(connectionString);
@@ -111,80 +114,6 @@ public class DbBoats : IDbBoats
 
         return list;
     }
-    private List<BoatDto> GetBoatsFromDataBase(string Name)
-    {
-        List<BoatDto> boatList = new List<BoatDto>();
-
-        using var connection = new SqlConnection(connectionString);
-
-        connection.Open();
-
-        var command = new SqlCommand(" SELECT * FROM Boats WHERE name = " + Name, connection);
-        var reader = command.ExecuteReader();
-
-        if (reader != null)
-            while (reader.Read())
-            {
-                string name = reader.GetString(1);
-
-                string type = reader.GetString(2);
-
-                int? max = null;
-                if (!reader.IsDBNull(3))
-                    max = reader.GetInt32(3);
-
-                int? min = null;
-                if (!reader.IsDBNull(4))
-                    min = reader.GetInt32(4);
-
-                string? authorised = null;
-                if (!reader.IsDBNull(5))
-                    authorised = reader.GetString(5);
-
-
-                boatList.Add(new BoatDto(name, type, max, min, authorised));
-            }
-        connection.Close();
-
-        return boatList;
-    }
-    private List<BoatDto> GetBoatsFromDataBase(int id)
-    {
-        List<BoatDto> boatList = new List<BoatDto>();
-
-        using var connection = new SqlConnection(connectionString);
-
-        connection.Open();
-
-        var command = new SqlCommand(" SELECT * FROM Boats WHERE id = " + id, connection);
-        var reader = command.ExecuteReader();
-
-        if (reader != null)
-            while (reader.Read())
-            {
-                string name = reader.GetString(1);
-
-                string type = reader.GetString(2);
-
-                int? max = null;
-                if (!reader.IsDBNull(3))
-                    max = reader.GetInt32(3);
-
-                int? min = null;
-                if (!reader.IsDBNull(4))
-                    min = reader.GetInt32(4);
-
-                string? authorised = null;
-                if (!reader.IsDBNull(5))
-                    authorised = reader.GetString(5);
-
-
-                boatList.Add(new BoatDto(name, type, max, min, authorised));
-            }
-        connection.Close();
-
-        return boatList;
-    }
 
     private List<string> getBoatTypes()
     {
@@ -229,6 +158,7 @@ public class DbBoats : IDbBoats
 
         return result;
     }
+
     private List<string> GetCertificatesFromDb()
     {
         List<string> list = new List<String>();
@@ -252,25 +182,25 @@ public class DbBoats : IDbBoats
         return list;
     }
 
-    public bool IsCertificateCorrect(BoatDto boat)
+    public bool IsCertificateCorrect(string certificates)
     {
-        return DoesStringContainRightCertificates(boat.Authorizations);
+        return DoesStringContainRightCertificates(certificates);
     }
 
-    public bool IsBoatTypeCorrect(BoatDto boat)
+    public bool IsBoatTypeCorrect(string type)
     {
         List<string> types = getBoatTypes();
-        if (types.Contains(boat.Type))
+        if (types.Contains(type))
             return true;
         return false;
     }
 
-    public bool DoesBoatExist(BoatDto boat)
+    public bool DoesBoatExist(string name)
     {
         using var connection = new SqlConnection(connectionString);
         connection.Open();
 
-        var command = new SqlCommand(" SELECT * FROM Boats where name = '" + boat.Name + "'", connection);
+        var command = new SqlCommand(" SELECT * FROM Boats where name = '" + name + "'", connection);
         var reader = command.ExecuteReader();
 
         if (reader.HasRows)
@@ -283,12 +213,12 @@ public class DbBoats : IDbBoats
         return false;
     }
 
-    public void RemoveBoat(BoatDto boat)
+    public void RemoveBoat(string name, string type)
     {
         using var connection = new SqlConnection(connectionString);
         connection.Open();
 
-        var command = new SqlCommand(" DELETE FROM Boats WHERE Name = '" + boat.Name + "' and Type = '" + boat.Type + "'", connection);
+        var command = new SqlCommand(" DELETE FROM Boats WHERE Name = '" + name + "' and Type = '" + type + "'", connection);
         var reader = command.ExecuteReader();
 
         connection.Close();

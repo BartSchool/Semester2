@@ -16,6 +16,17 @@ public class Users
 
         foreach (UserDto dto in _users.users)
             userList.Add(new User(dto));
+        SortList();
+    }
+
+    private void SortList()
+    {
+        userList.Sort(delegate (User x, User y) {
+            return x.Name.CompareTo(y.Name);
+        });
+        userList.Sort(delegate (User x, User y) {
+            return y.IsAdmin.CompareTo(x.IsAdmin);
+        });
     }
 
     public void AddUser(string name, bool IsAdmin, string Certificates)
@@ -26,7 +37,7 @@ public class Users
 
     public void RemoveUser(User user)
     {
-        UserDto Dto = new UserDto((int)user.Id, user.Name, user.IsAdmin, user.Certificates);
+        UserDto Dto = new UserDto(user.Id, user.Name, user.IsAdmin, user.Certificates);
         _users.RemoveUser(Dto);
     }
 

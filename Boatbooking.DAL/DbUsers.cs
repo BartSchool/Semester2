@@ -30,6 +30,7 @@ public class DbUsers : IDataBaseUsers, IUser
 
         connection.Close();
     }
+
     private void addUserToDb(string name, bool isAdmin)
     {
         using var connection = new SqlConnection(connectionString);
@@ -44,22 +45,6 @@ public class DbUsers : IDataBaseUsers, IUser
             "BEGIN " +
             "INSERT INTO Users(Name, Password, IsAdmin) " +
             "VALUES ('" + name + "','" + name + "'," + isAdminInt + ") " +
-            "END",
-            connection);
-        var reader = command.ExecuteReader();
-
-        connection.Close();
-    }
-    private void addUserToDb(string name)
-    {
-        using var connection = new SqlConnection(connectionString);
-        connection.Open();
-
-        var command = new SqlCommand(
-            "IF not exists (SELECT * FROM Users WHERE Name = '" + name + "') " +
-            "BEGIN " +
-            "INSERT INTO Users(Name, Password, IsAdmin) " +
-            "VALUES ('" + name + "','" + name + "', 0) " +
             "END",
             connection);
         var reader = command.ExecuteReader();
@@ -94,60 +79,6 @@ public class DbUsers : IDataBaseUsers, IUser
                 {
                     users.Add(new UserDto(id, name, isAdmin));
                 }
-            }
-
-        connection.Close();
-        return users;
-    }
-    private List<UserDto> GetUsersFromDataBase(string Name)
-    {
-        List<UserDto> users = new List<UserDto>();
-
-        using var connection = new SqlConnection(connectionString);
-
-        connection.Open();
-
-        var command = new SqlCommand(" SELECT * FROM Users where Name = " + Name, connection);
-        var reader = command.ExecuteReader();
-
-        if (reader != null)
-            while (reader.Read())
-            {
-                bool isAdmin = false;
-                int id = reader.GetInt32(0);
-                string name = reader.GetString(1);
-                int isAdminread = reader.GetInt16(3);
-                if (isAdminread == 1)
-                    isAdmin = true;
-
-                users.Add(new UserDto(id, name, isAdmin));
-            }
-
-        connection.Close();
-        return users;
-    }
-    private List<UserDto> GetUsersFromDataBase(int Id)
-    {
-        List<UserDto> users = new List<UserDto>();
-
-        using var connection = new SqlConnection(connectionString);
-
-        connection.Open();
-
-        var command = new SqlCommand(" SELECT * FROM Users where ID = " + Id, connection);
-        var reader = command.ExecuteReader();
-
-        if (reader != null)
-            while (reader.Read())
-            {
-                bool isAdmin = false;
-                int id = reader.GetInt32(0);
-                string name = reader.GetString(1);
-                int isAdminread = reader.GetInt16(3);
-                if (isAdminread == 1)
-                    isAdmin = true;
-
-                users.Add(new UserDto(id, name, isAdmin));
             }
 
         connection.Close();
@@ -211,6 +142,7 @@ public class DbUsers : IDataBaseUsers, IUser
 
         return true;
     }
+
     private List<string> GetCertificatesFromDb()
     {
         List<string> list = new List<String>();

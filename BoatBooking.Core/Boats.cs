@@ -15,6 +15,17 @@ public class Boats
 
         foreach (BoatDto dto in _boats.BoatList)
             BoatList.Add(new Boat(dto));
+        sortList();
+    }
+
+    private void sortList()
+    {
+        BoatList.Sort(delegate (Boat x, Boat y) {
+            return x.Name.CompareTo(y.Name);
+        });
+        BoatList.Sort(delegate (Boat x, Boat y) {
+            return x.Type.CompareTo(y.Type);
+        });
     }
 
     public void AddBoat(string name, string type, int? weightMax, int? weightMin, string? certificates)
@@ -23,27 +34,23 @@ public class Boats
         _boats.AddBoat(boat);
     }
 
-    public void RemoveBoat(Boat boat)
+    public void RemoveBoat(string name, string type)
     {
-        BoatDto boatDto = new BoatDto(boat.Name, boat.Type, boat.WeightMin, boat.WeightMax, boat.Authorizations);
-        _boats.RemoveBoat(boatDto);
+        _boats.RemoveBoat(name, type);
     }
 
-    public bool doesBoatExist(string name, string type, int? weightMax, int? weightMin, string? certificates)
+    public bool doesBoatExist(string name)
     {
-        BoatDto Dto = new BoatDto(name, type, weightMax, weightMin, certificates);
-        return _boats.DoesBoatExist(Dto);
+        return _boats.DoesBoatExist(name);
     }
 
-    public bool IsBoatTypeCorrect(string name, string type, int? weightMax, int? weightMin, string? certificates)
+    public bool IsBoatTypeCorrect(string type)
     {
-        BoatDto Dto = new BoatDto(name, type, weightMax, weightMin, certificates);
-        return _boats.IsBoatTypeCorrect(Dto);
+        return _boats.IsBoatTypeCorrect(type);
     }
 
-    public bool IsCertificatesRight(string name, string type, int? weightMax, int? weightMin, string? certificates)
+    public bool IsCertificatesRight(string certificates)
     {
-        BoatDto Dto = new BoatDto(name, type, weightMax, weightMin, certificates);
-        return _boats.IsCertificateCorrect(Dto);
+        return _boats.IsCertificateCorrect(certificates);
     }
 }

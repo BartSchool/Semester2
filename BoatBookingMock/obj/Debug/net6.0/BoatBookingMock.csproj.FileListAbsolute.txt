@@ -1,0 +1,15 @@
+C:\Users\31618\Documents\GitHub\Semester2\BoatBookingMock\bin\Debug\net6.0\BoatBookingMock.deps.json
+C:\Users\31618\Documents\GitHub\Semester2\BoatBookingMock\bin\Debug\net6.0\BoatBookingMock.dll
+C:\Users\31618\Documents\GitHub\Semester2\BoatBookingMock\bin\Debug\net6.0\BoatBookingMock.pdb
+C:\Users\31618\Documents\GitHub\Semester2\BoatBookingMock\bin\Debug\net6.0\BoatBookingCore.dll
+C:\Users\31618\Documents\GitHub\Semester2\BoatBookingMock\bin\Debug\net6.0\BoatBookingCore.pdb
+C:\Users\31618\Documents\GitHub\Semester2\BoatBookingMock\obj\Debug\net6.0\BoatBookingMock.csproj.AssemblyReference.cache
+C:\Users\31618\Documents\GitHub\Semester2\BoatBookingMock\obj\Debug\net6.0\BoatBookingMock.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\31618\Documents\GitHub\Semester2\BoatBookingMock\obj\Debug\net6.0\BoatBookingMock.AssemblyInfoInputs.cache
+C:\Users\31618\Documents\GitHub\Semester2\BoatBookingMock\obj\Debug\net6.0\BoatBookingMock.AssemblyInfo.cs
+C:\Users\31618\Documents\GitHub\Semester2\BoatBookingMock\obj\Debug\net6.0\BoatBookingMock.csproj.CoreCompileInputs.cache
+C:\Users\31618\Documents\GitHub\Semester2\BoatBookingMock\obj\Debug\net6.0\BoatBookingMock.csproj.CopyComplete
+C:\Users\31618\Documents\GitHub\Semester2\BoatBookingMock\obj\Debug\net6.0\BoatBookingMock.dll
+C:\Users\31618\Documents\GitHub\Semester2\BoatBookingMock\obj\Debug\net6.0\refint\BoatBookingMock.dll
+C:\Users\31618\Documents\GitHub\Semester2\BoatBookingMock\obj\Debug\net6.0\BoatBookingMock.pdb
+C:\Users\31618\Documents\GitHub\Semester2\BoatBookingMock\obj\Debug\net6.0\ref\BoatBookingMock.dll

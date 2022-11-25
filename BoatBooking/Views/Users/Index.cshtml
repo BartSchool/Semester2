@@ -35,7 +35,11 @@
                             <input asp-for="User.Id" type="number" value="@user.Id" />
                             <input asp-for="User.Certificates" type="text" value="@user.Certificates" />
                         </p>
-                        <input type="submit" value="-">
+                        @if (user.IsAdmin){
+                            
+                        } else {
+                            <input type="submit" value="-">
+                        }
                     </form>
                 </span>
                 <span class="send">
