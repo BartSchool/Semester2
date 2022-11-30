@@ -24,6 +24,8 @@ public class User
 
     public User(UserDto Dto)
     {
+        if (Dto.Name.Length == 0) throw new ArgumentOutOfRangeException();
+
         Id = Dto.Id;
         Name = Dto.Name;
         Password = Dto.Name;
@@ -33,6 +35,8 @@ public class User
 
     private User(string name)
     {
+        if (name.Length == 0) throw new ArgumentOutOfRangeException("name");
+
         Name = name;
         Password = name;
         IsAdmin = false;

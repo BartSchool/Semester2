@@ -11,6 +11,6 @@ public class BoathouseViewModel
     public BoathouseViewModel()
     {
         boats = new Boats(new DbBoats());
-        Boat = new Boat("", "");
+        Boat = new Boat("test", "test");
     }
 }

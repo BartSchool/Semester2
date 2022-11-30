@@ -11,8 +11,13 @@ public class Boats
     public Boats(IDbBoats db)
     {
         _boats = db;
-        BoatList = new List<Boat>();
+        BoatList = new();
+        GetBoats();
+    }
 
+    private void GetBoats()
+    {
+        BoatList = new();
         foreach (BoatDto dto in _boats.BoatList)
             BoatList.Add(new Boat(dto));
         sortList();
@@ -32,11 +37,15 @@ public class Boats
     {
         BoatDto boat = new BoatDto(name, type, weightMax, weightMin, certificates);
         _boats.AddBoat(boat);
+
+        GetBoats();
     }
 
     public void RemoveBoat(string name, string type)
     {
         _boats.RemoveBoat(name, type);
+
+        GetBoats();
     }
 
     public bool doesBoatExist(string name)

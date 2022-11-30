@@ -8,7 +8,7 @@ public class DbBoats : IDbBoats
 {
     private readonly string connectionString = @"Server=LAPTOP-1JC5056U\SQLEXPRESS; Database=Bootbooking; Trusted_Connection=True";
 
-    public List<BoatDto> BoatList { get => GetBoatsFromDataBase(); set => throw new NotImplementedException(); }
+    public List<BoatDto> BoatList { get => GetBoatsFromDataBase(); }
 
     private void addBoatToDb(string name, string type)
     {

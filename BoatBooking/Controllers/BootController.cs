@@ -25,7 +25,6 @@ public class BootController : Controller
     {
         if (ModelState.IsValid)
         {
-            // Specification patterns!! fluentvalidations
             // name errors
             if (viewModel.name == null)
                 ModelState.AddModelError("name", "a name is required");

@@ -11,11 +11,16 @@ public class Users
 
     public Users(IDataBaseUsers db)
     {
-        userList = new List<User>();
+        userList = new();
         _users = db;
+        GetUsers();
+    }
 
+    private void GetUsers()
+    {
+        userList = new();
         foreach (UserDto dto in _users.users)
-            userList.Add(new User(dto));
+            userList.Add(new(dto));
         SortList();
     }
 
@@ -33,12 +38,16 @@ public class Users
     {
         UserDto user = new UserDto(name, IsAdmin, Certificates);
         _users.AddUser(user);
+
+        GetUsers();
     }
 
     public void RemoveUser(User user)
     {
         UserDto Dto = new UserDto(user.Id, user.Name, user.IsAdmin, user.Certificates);
         _users.RemoveUser(Dto);
+
+        GetUsers();
     }
 
     public bool DoesUserExist(string name)
