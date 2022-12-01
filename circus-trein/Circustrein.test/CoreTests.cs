@@ -2,11 +2,6 @@ namespace Circustrein.test
 {
     public class CoreTests
     {
-        Train train = new Train();
-        List<Animal> animals = new List<Animal>();
-
-        
-
         [Fact]
         public void Senario1()
         {
