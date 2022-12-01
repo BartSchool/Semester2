@@ -1,5 +1,4 @@
 ﻿using BoatBookingCore;
-using BoatBookingCore.Dto;
 using BoatBookingMock;
 
 namespace BoatBookingTest;
@@ -75,5 +74,13 @@ public class BoatTests
         Boats boats = new(new MockDb());
         boats.AddBoat("bob", "c4+", null, null, "");
         Assert.Throws<ArgumentOutOfRangeException>(() => boats.AddBoat("", "c4+", null, null, ""));
+    }
+
+    [Fact]
+    public void CantCreateABoatWithATypeWithALengthOf0()
+    {
+        Boats boats = new(new MockDb());
+        boats.AddBoat("bob", "c4+", null, null, "");
+        Assert.Throws<ArgumentOutOfRangeException>(() => boats.AddBoat("bobby", "", null, null, ""));
     }
 }

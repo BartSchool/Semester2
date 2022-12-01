@@ -35,9 +35,13 @@ public class Boats
 
     public void AddBoat(string name, string type, int? weightMax, int? weightMin, string? certificates)
     {
+        if (doesBoatExist(name)) throw new Exception("Boat allready exists");
+        if (!IsBoatTypeCorrect(type)) throw new Exception("Type is not correct");
+        if (certificates != null && certificates.Length > 0)
+            if (!IsCertificatesRight(certificates)) throw new Exception("certificates are not correct");
+
         BoatDto boat = new BoatDto(name, type, weightMax, weightMin, certificates);
         _boats.AddBoat(boat);
-
         GetBoats();
     }
 

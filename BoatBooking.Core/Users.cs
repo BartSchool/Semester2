@@ -36,6 +36,9 @@ public class Users
 
     public void AddUser(string name, bool IsAdmin, string Certificates)
     {
+        if (DoesUserExist(name)) throw new Exception("User allready exists");
+        if (AreCertificatesRight(Certificates)) throw new Exception("Certificates are wrong");
+
         UserDto user = new UserDto(name, IsAdmin, Certificates);
         _users.AddUser(user);
 
@@ -44,6 +47,8 @@ public class Users
 
     public void RemoveUser(User user)
     {
+        if (user.IsAdmin && IsLastAdmin()) throw new Exception("There must allways be one admin");
+
         UserDto Dto = new UserDto(user.Id, user.Name, user.IsAdmin, user.Certificates);
         _users.RemoveUser(Dto);
 
