@@ -1,3 +1,36 @@
 ﻿@model ReservationViewModel
+@{
+    DateTime today = DateTime.Today;
+}
 
-<h1>Calendar</h1>
+<head>
+    <link rel="stylesheet" href="~/css/BoatHouse.css" />
+</head>
+
+<body class="addboatBody">
+    @for(int i = 0; i < 7; i++){
+        <div class="DayContainer">
+            <div>
+                <span>@today.AddDays(i).ToShortDateString()</span>
+            </div>
+            <div class="TableContainer">
+                @foreach (Reservation reservation in Model.Reservations.reservations)
+                {
+                    @if (reservation.TimeStart.ToShortDateString() == @today.AddDays(i).ToShortDateString())
+                    {
+                        <div class="reservationContainer">
+                            <div class="HorizontalContainer">
+                                <span class="ThiccText">@reservation.TimeStart.ToShortTimeString() - @reservation.TimeEnd.ToShortTimeString()</span>
+                                <span class="text">@reservation.Boat.Type</span>
+                            </div>
+                            <div class="HorizontalContainer">
+                                <span class="ThiccText">@reservation.Boat.Name</span>
+                                <span class="text">@reservation.User.Name</span>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    }
+</body>

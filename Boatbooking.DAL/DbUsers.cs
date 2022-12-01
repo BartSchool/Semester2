@@ -84,6 +84,35 @@ public class DbUsers : IDataBaseUsers, IUser
         connection.Close();
         return users;
     }
+    public UserDto GetUserFromDataBase(int Id)
+    {
+        UserDto user;
+
+        using var connection = new SqlConnection(connectionString);
+
+        connection.Open();
+
+        var command = new SqlCommand(" SELECT * FROM Users WHERE id = " + Id, connection);
+        var reader = command.ExecuteReader();
+        reader.Read();
+        string certificates;
+        int id = reader.GetInt32(0);
+        string name = reader.GetString(1);
+        bool isAdmin = reader.GetBoolean(3);
+        if (!reader.IsDBNull(4))
+        {
+            certificates = reader.GetString(4);
+            user = new UserDto(id, name, isAdmin, certificates);
+        }
+        else
+        {
+            user = new UserDto(id, name, isAdmin);
+        }
+
+        connection.Close();
+        return user;
+    }
+
 
     private int HowManyAdminsAreThere()
     {

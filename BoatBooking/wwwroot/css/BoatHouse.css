@@ -1,5 +1,17 @@
-﻿.addBoat, .TableContent, .TableContainer, .TableHeader {
+﻿.addBoat, .TableContent, .TableContainer, .TableHeader .DayContainer{
     box-shadow: -20px 20px 20px -23px black;
+}
+
+.HorizontalContainer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.reservationContainer {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
 }
 
 .addBoat {
@@ -10,6 +22,10 @@
     padding: 5px 20px;
     margin-bottom: 10px;
     justify-content: center;
+}
+
+.ThiccText {
+    font-size: 1.3em;
 }
 
 .addBoatText {
@@ -38,6 +54,18 @@ a:hover {
     border-radius: 20px;
     margin: 15px;
     padding: 10px;
+}
+
+.DayContainer {
+    background-color: #6997BF;
+    border-radius: 20px;
+    padding-bottom: 5px;
+    padding: 20px;
+    margin: 10px;
+}
+
+.DayContainer h1 {
+    font-size: 2em;
 }
 
 .TableContainer {

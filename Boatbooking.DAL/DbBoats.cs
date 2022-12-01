@@ -115,6 +115,37 @@ public class DbBoats : IDbBoats
         return list;
     }
 
+    public BoatDto GetBoatFromDataBase(int Id)
+    {
+        using var connection = new SqlConnection(connectionString);
+        BoatDto dto;
+
+        connection.Open();
+
+        var command = new SqlCommand(" SELECT * FROM Boats WHERE Id = " + Id, connection);
+        var reader = command.ExecuteReader();
+        reader.Read();
+        string name = reader.GetString(1);
+        string type = reader.GetString(2);
+
+        int? max = null;
+        if (!reader.IsDBNull(3))
+            max = reader.GetInt32(3);
+
+        int? min = null;
+        if (!reader.IsDBNull(4))
+            min = reader.GetInt32(4);
+
+        string? authorised = null;
+        if (!reader.IsDBNull(5))
+            authorised = reader.GetString(5);
+
+
+        dto = new BoatDto(name, type, max, min, authorised);
+        connection.Close();
+        return dto;
+    }
+
     private List<string> getBoatTypes()
     {
         List<string> boatTypes = new List<string>();
