@@ -11,7 +11,7 @@
     @for(int i = 0; i < 7; i++){
         <div class="DayContainer">
             <div>
-                <span>@today.AddDays(i).ToShortDateString()</span>
+                <h1>@today.AddDays(i).ToShortDateString()</h1>
             </div>
             <div class="TableContainer">
                 @foreach (Reservation reservation in Model.Reservations.reservations)
@@ -25,7 +25,7 @@
                             </div>
                             <div class="HorizontalContainer">
                                 <span class="ThiccText">@reservation.Boat.Name</span>
-                                <span class="text">@reservation.User.Name</span>
+                                <span class="user">@reservation.User.Name</span>
                             </div>
                         </div>
                     }
