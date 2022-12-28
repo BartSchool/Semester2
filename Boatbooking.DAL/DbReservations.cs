@@ -44,9 +44,10 @@ public class DbReservations : IDbReservations
         connection.Open();
 
         var command = new SqlCommand("INSERT INTO Reservations(boatID, userID, timeStart, timeEnd)\n VALUES "+
-            "((SELECT id FROM Boats WHERE Name = " + boat.Name + " AND WHERE type = " + boat.Type + ")," + 
-            "(SELECT id FROM Users WHERE Name = " + user.Name + " AND WHERE Certificates = " + user.Certificates + ")," +
-            startTime + " , " + endTime + " )", connection);
+            "((SELECT id FROM Boats WHERE Name = '" + boat.Name + "')," + 
+            "(SELECT id FROM Users WHERE Name = '" + user.Name + "'),'" +
+            startTime.ToString("yyyy-MM-dd hh:mm:ss") + "','" +
+            endTime.ToString("yyyy-MM-dd hh:mm:ss") + "')", connection);
         var reader = command.ExecuteReader();
     }
 

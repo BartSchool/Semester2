@@ -12,11 +12,17 @@ public class BookingController : Controller
         return View(viewModel);
     }
 
-    public IActionResult AddReservation(ReservationViewModel viewModel)
+    public IActionResult AddReservation(ReservationViewModel model)
     {
-        if (viewModel.startTime == null) throw new Exception("Need an start time");
-        if (viewModel.endTime == null) throw new Exception("Need an end time");
-        viewModel.Reservations.AddReservation(new ReservationDto(0, viewModel.boat, viewModel.user, (DateTime)viewModel.startTime, (DateTime)viewModel.endTime));
+        return View(model);
+    }
+
+    [HttpPost]
+    public IActionResult SubmitReservation(ReservationViewModel viewModel)
+    {
+        viewModel.startDateTime = new DateTime(viewModel.date.Year, viewModel.date.Month, viewModel.date.Day, viewModel.startTime.Hour, viewModel.startTime.Minute, viewModel.startTime.Second);
+        viewModel.endDateTime = new DateTime(viewModel.date.Year, viewModel.date.Month, viewModel.date.Day, viewModel.endTime.Hour, viewModel.endTime.Minute, viewModel.endTime.Second);
+        viewModel.Reservations.AddReservation(new ReservationDto(0, viewModel.boat, viewModel.user, (DateTime)viewModel.startDateTime, (DateTime)viewModel.endDateTime));
         return RedirectToAction("Index");
     }
 }

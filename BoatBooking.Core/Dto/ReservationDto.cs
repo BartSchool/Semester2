@@ -33,4 +33,16 @@ public class ReservationDto
     {
         Occupants = occupants;
     }
+
+    public ReservationDto(int id, string boat, string user, DateTime timeStart, DateTime timeEnd)
+    {
+        Id = id;
+        Occupants = new List<User>();
+        Boat = new(boat, "new");
+        User = new(user,false,"new");
+        TimeStart = timeStart;
+        TimeEnd = timeEnd;
+        Occupants.Add(User);
+    }
+
 }

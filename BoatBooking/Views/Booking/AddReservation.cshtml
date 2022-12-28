@@ -1,4 +1,41 @@
-﻿
-<div>
-    <h1>Here we add reservations</h1>
-</div>
+﻿@model ReservationViewModel
+
+<head>
+    <link rel="stylesheet" href="~/css/addBoat.css" />
+</head>
+
+<form method="post" class="addboatBody" asp-controller="Booking" asp-action="SubmitReservation">
+    <div style="display: none">
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="center">
+        <h3>Please fill in the form</h3>
+        <div class="addBoatFormBody">
+            @Html.ValidationMessage("name","", new { @class = "text-danger"})
+            <p>
+                <label asp-for="boat">Boat </label>
+                <input asp-for="boat" type="text" placeholder="name of the boat" class="input" />
+            </p>
+            @Html.ValidationMessage("type","", new { @class = "text-danger"})
+            <p>
+                <label asp-for="user">username </label>
+                <input asp-for="user" type="text" placeholder="username" class="input"/>
+            </p>
+            <p>
+                <label asp-for="date">Date: </label>
+                <input asp-for="date" type="date" value="@Model.date.ToString("yyyy-MM-dd")" />
+            </p>
+            @Html.ValidationMessage("weight","", new { @class = "text-danger"})
+            <p>
+                <label asp-for="startTime">start: </label>
+                <a>
+                    <input asp-for="startTime" type="time" value="@Model.startTime.ToString("HH:mm")" step="900" />
+                    end:
+                    <input asp-for="endTime" type="time" value="@Model.endTime.ToString("HH:mm")" step="900" />
+                </a>
+            </p>
+        </div>
+        <input type="submit" value="Add Reservation" />
+    </div>
+</form>

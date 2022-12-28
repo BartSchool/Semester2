@@ -1,6 +1,12 @@
 ﻿@model ReservationViewModel
 @{
-    DateTime today = DateTime.Today;
+    DateTime RoundUp(DateTime dt, TimeSpan d)
+    {
+        return new DateTime((dt.Ticks + d.Ticks - 1) / d.Ticks * d.Ticks, dt.Kind);
+    }
+    DateTime today = DateTime.Now;
+    int succes = 0;
+
 }
 
 <head>
@@ -8,10 +14,29 @@
 </head>
 
 <body class="addboatBody">
+    <form class="addBoatText" asp-controller="Booking" asp-action="AddReservation">
+        <div class="addBoat">
+            addReservation
+            <div class="visually-hidden">
+                <input asp-for="date" type="date" value="@today.Date.ToString("yyyy-MM-dd")"/>
+                <input asp-for="startTime" type="datetime" value="@RoundUp(today, TimeSpan.FromMinutes(15))" />
+                <input asp-for="endTime" type="datetime" value="@RoundUp(today.AddHours(1), TimeSpan.FromMinutes(15))" />
+            </div>
+            <input type="submit" value="+" style="padding: 0px 10px;">
+        </div>
+    </form>
     @for(int i = 0; i < 7; i++){
         <div class="DayContainer">
-            <div>
+            <div style="display: flex; flex-direction: row">
                 <h1>@today.AddDays(i).ToShortDateString()</h1>
+                <form asp-controller="Booking" asp-action="AddReservation">
+                    <div class="visually-hidden">
+                        <input asp-for="date" type="date" value="@today.AddDays(i).Date.ToString("yyyy-MM-dd")"/>
+                        <input asp-for="startTime" type="datetime" value="@RoundUp(today, TimeSpan.FromMinutes(15))" />
+                        <input asp-for="endTime" type="datetime" value="@RoundUp(today.AddHours(1), TimeSpan.FromMinutes(15))" />
+                    </div>
+                    <input type="submit" value="+" style="padding: 0px 10px; margin: 0px 10px;">
+                </form>
             </div>
             <div class="TableContainer">
                 @foreach (Reservation reservation in Model.Reservations.reservations)
@@ -20,7 +45,7 @@
                     {
                         <div class="reservationContainer">
                             <div class="HorizontalContainer">
-                                <span class="ThiccText">@reservation.TimeStart.ToShortTimeString() - @reservation.TimeEnd.ToShortTimeString()</span>
+                                <span class="ThiccText">@reservation.TimeStart.ToString("HH:mm") - @reservation.TimeEnd.ToString("HH:mm")</span>
                                 <span class="text">@reservation.Boat.Type</span>
                             </div>
                             <div class="HorizontalContainer">
@@ -28,8 +53,15 @@
                                 <span class="user">@reservation.User.Name</span>
                             </div>
                         </div>
+                        succes++;
                     }
                 }
+                @if (succes == 0){
+                    <div class="HorizontalContainer">
+                        <span class="text">No reservations yet</span>
+                    </div>
+                }
+                @{succes = 0;}
             </div>
         </div>
     }
