@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VPT.view", "VPT.view\VPT.view.csproj", "{1DBB1115-4AE6-4D69-BF77-FF6CCADE6817}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VPT.Core", "VPT.Core\VPT.Core.csproj", "{6C2C287D-FDE9-4EE4-A63C-79896593CD0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VPT.Dal", "VPT.Dal\VPT.Dal.csproj", "{0733E14B-54CC-4CF6-967A-CA067BDFF4A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DBB1115-4AE6-4D69-BF77-FF6CCADE6817}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DBB1115-4AE6-4D69-BF77-FF6CCADE6817}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DBB1115-4AE6-4D69-BF77-FF6CCADE6817}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DBB1115-4AE6-4D69-BF77-FF6CCADE6817}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C2C287D-FDE9-4EE4-A63C-79896593CD0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C2C287D-FDE9-4EE4-A63C-79896593CD0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C2C287D-FDE9-4EE4-A63C-79896593CD0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C2C287D-FDE9-4EE4-A63C-79896593CD0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0733E14B-54CC-4CF6-967A-CA067BDFF4A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0733E14B-54CC-4CF6-967A-CA067BDFF4A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0733E14B-54CC-4CF6-967A-CA067BDFF4A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0733E14B-54CC-4CF6-967A-CA067BDFF4A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87ECD0BF-A4F4-4CCB-B1C1-E23C3DA21F65}
+	EndGlobalSection
+EndGlobal
