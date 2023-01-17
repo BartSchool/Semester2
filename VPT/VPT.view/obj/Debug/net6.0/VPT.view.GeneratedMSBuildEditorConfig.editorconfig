@@ -15,6 +15,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.view
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/31618/Documents/GitHub/Semester2/VPT/VPT.view/Views/Event/AddEvent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQWRkRXZlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/31618/Documents/GitHub/Semester2/VPT/VPT.view/Views/Event/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/31618/Documents/GitHub/Semester2/VPT/VPT.view/Views/Home/AddReservation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRSZXNlcnZhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/31618/Documents/GitHub/Semester2/VPT/VPT.view/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

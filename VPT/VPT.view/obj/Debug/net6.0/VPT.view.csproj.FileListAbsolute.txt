@@ -24,3 +24,14 @@ C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.view\obj\Debug\net6.0\refint\V
 C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.view\obj\Debug\net6.0\VPT.view.pdb
 C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.view\obj\Debug\net6.0\VPT.view.genruntimeconfig.cache
 C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.view\obj\Debug\net6.0\ref\VPT.view.dll
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.view\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.view\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.view\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.view\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.view\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.view\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.view\bin\Debug\net6.0\VPT.Core.dll
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.view\bin\Debug\net6.0\VPT.Dal.dll
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.view\bin\Debug\net6.0\VPT.Core.pdb
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.view\bin\Debug\net6.0\VPT.Dal.pdb
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.view\obj\Debug\net6.0\VPT.view.csproj.CopyComplete

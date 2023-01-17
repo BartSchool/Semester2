@@ -1,0 +1,40 @@
+﻿@using VPT.Core.Classes
+@model EventViewModel
+
+<div class="Fullscreen">
+    <div class="TableContainer">
+        <div class="ContainerEvent">
+            <h1 class="addEvent">
+                All the events currently going on
+            </h1>
+            <form method="get" asp-controller="Event" asp-action="AddEvent">
+                <input type="submit" value="+">
+            </form>
+        </div>
+        <div class="TableHeader">
+            <span class="name">Name</span>
+            <span class="start">Start</span>
+            <span class="spaces">Available spaces</span>
+            <span class="send"></span>
+        </div>
+        @for (int i = 0; i < Model._events.EventList.Count; i++){
+            Event currentEvent = Model._events.EventList[i];
+            <div class="TableContent">
+                <span class="name">@currentEvent.name</span>
+                <span class="start">@currentEvent.eventStart</span>
+                <span class="spaces">@currentEvent.spaces</span>
+                <span class="send">
+                    <form method="post" asp-controller="Event" asp-action="RemoveEvent">
+                        <p style="display: none">
+                            <label asp-for="name" /><input id="name-@i" asp-for="name" type="text" value="@currentEvent.name" />
+                            <label asp-for="end" /><input id="last-@i" asp-for="end" type="datetime" value="@currentEvent.lastRegisterTime" />
+                            <label asp-for="start" /><input id="start-@i" asp-for="start" type="datetime" value="@currentEvent.eventStart" />
+                            <label asp-for="amount"/><input id="spaces-@i" asp-for="amount" type= "number" value="@currentEvent.spaces"/>
+                        </p>
+                        <input type="submit" value="-">
+                    </form>
+                </span>
+            </div>
+        }
+    </div>
+</div>

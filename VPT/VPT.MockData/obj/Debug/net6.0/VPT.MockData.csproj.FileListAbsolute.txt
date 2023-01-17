@@ -1,0 +1,15 @@
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.MockData\bin\Debug\net6.0\VPT.MockData.deps.json
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.MockData\bin\Debug\net6.0\VPT.MockData.dll
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.MockData\bin\Debug\net6.0\VPT.MockData.pdb
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.MockData\bin\Debug\net6.0\VPT.Core.dll
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.MockData\bin\Debug\net6.0\VPT.Core.pdb
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.MockData\obj\Debug\net6.0\VPT.MockData.csproj.AssemblyReference.cache
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.MockData\obj\Debug\net6.0\VPT.MockData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.MockData\obj\Debug\net6.0\VPT.MockData.AssemblyInfoInputs.cache
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.MockData\obj\Debug\net6.0\VPT.MockData.AssemblyInfo.cs
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.MockData\obj\Debug\net6.0\VPT.MockData.csproj.CoreCompileInputs.cache
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.MockData\obj\Debug\net6.0\VPT.MockData.csproj.CopyComplete
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.MockData\obj\Debug\net6.0\VPT.MockData.dll
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.MockData\obj\Debug\net6.0\refint\VPT.MockData.dll
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.MockData\obj\Debug\net6.0\VPT.MockData.pdb
+C:\Users\31618\Documents\GitHub\Semester2\VPT\VPT.MockData\obj\Debug\net6.0\ref\VPT.MockData.dll

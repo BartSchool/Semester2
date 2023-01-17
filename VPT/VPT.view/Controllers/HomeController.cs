@@ -1,32 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+using VPT.Dal;
 using VPT.view.Models;
 
-namespace VPT.view.Controllers
+namespace VPT.view.Controllers;
+
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    public IActionResult Index()
     {
-        private readonly ILogger<HomeController> _logger;
+        HomeViewModel vm = new HomeViewModel();
+        vm.EventCollection = new(new Dalevent());
+        return View(vm);
+    }
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+    [HttpPost]
+    public IActionResult AddReservation(HomeViewModel vm)
+    {
+        return View();
+    }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+    public IActionResult Privacy()
+    {
+        return View();
     }
 }

@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "VPT.MockData/1.0.0": {
+        "dependencies": {
+          "VPT.Core": "1.0.0"
+        },
+        "runtime": {
+          "VPT.MockData.dll": {}
+        }
+      },
+      "VPT.Core/1.0.0": {
+        "runtime": {
+          "VPT.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "VPT.MockData/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VPT.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

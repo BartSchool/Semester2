@@ -1,18 +1,227 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+label {
+    margin-inline-end: 10px;
 }
 
 body {
-  margin-bottom: 60px;
+    background-color: antiquewhite;
+    font-weight: bold;
+}
+
+td, th {
+    padding-inline: 10px;
+    text-align: center;
+}
+
+th{
+    border-bottom: 1px solid;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.Fullscreen {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    min-height: 90%;
+    top: 5%;
+    left: 0;
+    justify-content: center;
+    color: black;
+}
+
+.BackGround {
+    display: flex;
+    background-color: lavender;
+    flex-direction: column;
+    min-width: 40%;
+    margin: 2%;
+    padding: 50px;
+    border-radius: 20px;
+    border: solid;
+    border-color: white;
+    justify-content: space-between;
+    font-size: 1.4em;
+}
+
+.ContainerUser{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+.ContainerAddUser {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 5px;
+    background-color: white;
+    border: solid;
+    border-color: white;
+    border-radius: 20px;
+}
+
+    .ContainerAddUser:hover {
+        background-color: lavender;
+        border: solid;
+        border-color: white;
+        cursor: pointer;
+    }
+
+.Container, ContainerEvent {
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+}
+
+.ContainerEvent input {
+    margin: 10px;
+    background-color: white;
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    justify-content: center;
+    font-weight: bolder;
+    border: solid;
+    border-color: white;
+}
+
+    .ContainerEvent input:hover {
+        background-color: lavender;
+        border-color: white;
+    }
+
+.ContainerAddEvent {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px;
+}
+
+.ContainerAdd {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ContainerAddRemove {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2px;
+}
+
+.ContainerBottom {
+    display: flex;
+    margin-inline: 30%;
+    flex-direction: column;
+    text-align: center;
+}
+
+.btn1 {
+    background-color: mediumslateblue;
+    font-weight: bold;
+    color: white;
+    margin: 5px;
+    border-radius: 20px;
+    border: solid;
+    border-color: mediumslateblue;
+}
+
+    .btn1:hover {
+        background-color: slateblue;
+        border: solid;
+        border-color: slateblue;
+        cursor: pointer;
+    }
+
+.btn2 {
+    color: black;
+    font-weight: bold;
+    border-radius: 20px;
+    padding-inline: 10px;
+}
+
+btn3 {
+    display: flex;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    justify-content: center;
+    background-color: lavender;
+}
+
+.TableHeader {
+    background-color: mediumslateblue;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 25px;
+    display: flex;
+}
+
+.TableContent {
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    margin: 15px;
+    padding: 10px;
+}
+
+.TableContainer {
+    background-color: lavender;
+    width: 80%;
+    border-radius: 20px;
+    padding-bottom: 5px;
+    border: solid;
+    border-color: white;
+}
+
+.name, .start, .spaces, .send{
+    display: flex;
+    flex: 1;
+}
+
+.name, .start {
+    flex: 0.4;
+}
+
+.spaces{
+    flex: 0.2;
+}
+
+.send {
+    flex: 0.1;
+}
+
+.send input{
+    background-color:  lavender;
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    justify-content: center;
+    font-weight: bolder;
+    border: solid;
+    border-color: lavender;
+}
+
+.addEvent {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 15px;
+    padding-left: 80px;
 }

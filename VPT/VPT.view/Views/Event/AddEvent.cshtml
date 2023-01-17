@@ -1,0 +1,29 @@
+﻿@model AddEventViewModel
+
+<div class="Fullscreen">
+    <form method="post" asp-controller="Event" asp-action="AddEvent" class="BackGround">
+        <div class="Form">
+            <div class="ContainerUser">
+                <div class="ContainerAddEvent">
+                    <label asp-for="name">Event name </label>
+                    <input asp-for="name" type="text" placeholder="Name of event" class="btn2" />
+                </div>
+                <div class="ContainerAddEvent">
+                    <label asp-for="spaces">How many seats are there</label>
+                    <input asp-for="spaces" type="number" class="btn2"/>
+                </div>
+                <div class="ContainerAddEvent">
+                    <label asp-for="start">Start of event </label>
+                    <input asp-for="start" type="datetime-local" class="btn2" />
+                </div>
+                <div class="ContainerAddEvent">
+                    <label asp-for="end">When does the tickes sale close</label>
+                    <input asp-for="end" type="datetime-local" class="btn2" />
+                </div>
+            </div>
+            <div class="ContainerBottom">
+                <input class="btn1" type="submit" value="Send" />
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,8 +1,73 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@using VPT.Core.Classes
+@model HomeViewModel
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="Fullscreen">
+    <form method="post" asp-controller="Home" asp-action="AddReservation" class="BackGround">
+        <div class="Form">
+            <div class="ContainerBottom">
+                <div class="ContainerUser">
+                    <div class="container">
+                        <label asp-for="EventName">Choose your event</label>
+                        <select asp-for="EventName" asp-items="@(new SelectList(Model.EventCollection.EventList, nameof(Event.name), nameof(Event.name)))" class="btn2">
+                            <option style="display:none">-- Please select one --</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="destination" class="ContainerAdd">
+                <div class="ContainerUser" id="UserForm">
+                    <div class="Container">
+                        <p>Attendent 1</p>
+                    </div>
+                    <div class="Container">
+                        <label asp-for="UserName">Name</label>
+                        <input asp-for="UserName" type="text" placeholder="Full name please" class="btn2" />
+                    </div>
+                    <div class="Container">
+                        <label asp-for="BirthDate">Birth Date</label>
+                        <input asp-for="BirthDate" type="date" class="btn2" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ContainerBottom">
+            <div class="ContainerAddRemove">
+                <div class="ContainerAddUser" onclick="RemoveUserForm()">
+                    Remove Attendent
+                </div>
+                <div class="ContainerAddUser" onclick="AddUserForm()">
+                    Add Attendent
+                </div>
+            </div>
+            <input class="btn1" type="submit" value="Send" />
+        </div>
+    </form>
 </div>
+
+<script>
+    function AddUserForm() {
+        var c = document.getElementsByClassName("ContainerUser");
+        if (c.length > 30){
+            return;
+        }
+
+        var s = document.getElementById("UserForm"),
+            d = document.getElementById("destination")
+
+        var clone = s.cloneNode(true);
+        clone.setAttribute("id", "clone");
+        clone.getElementsByTagName("p")[0].innerHTML = "Attendent " + c.length;
+        var e = clone.getElementsByTagName("input");
+        for (let i = 0; i < e.length; i++){
+            e[i].value = null;
+        }
+        d.appendChild(clone);
+    }
+
+    function RemoveUserForm() {
+        var s = document.getElementsByClassName("ContainerUser");
+        if (s.length > 2){
+            s[s.length-1].remove();
+        }
+    }
+</script>

@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VPT.Core\VPT.Core.csproj" />
+    <ProjectReference Include="..\VPT.Dal\VPT.Dal.csproj" />
+  </ItemGroup>
+
 </Project>
